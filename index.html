@@ -8,7 +8,7 @@
   </head>
   <body>
     <!-- Video de fondo -->
-    <video id="video1">
+    <video id="video1" autoplay muted loop playinline>
       <source src="/assets/video/video.mp4" type="video/mp4" />
       Tu navegador no soporta el video.
     </video>
@@ -228,6 +228,35 @@
           </p>
         </div>
       </div>
+    </section>
+
+    <section class="final-form">
+      <video id="video2" autoplay muted loop playinline>
+        <source src="/assets/video/fondo-form.mp4" type="video/mp4" />
+        Tu navegador no soporta el video.
+      </video>
+      <h2>únete a</h2>
+      <img src="/assets/img/carmen.png" alt="Carmen" />
+      <form class="formulario">
+        <input type="text" placeholder="Nombre" required />
+        <input type="text" placeholder="Apellidos" required />
+        <input type="email" placeholder="Email" required />
+        <input
+          type="tel"
+          name="telefono"
+          required
+          pattern="[+]?[0-9\s-]{9,15}"
+          title="Ingrese un número telefónico válido, de 9 a 15 caracteres"
+        />
+        <div class="checkbox-container">
+          <input type="checkbox" id="privacy" required />
+          <label for="privacy"
+            >He leído y acepto la política de privacidad y las condiciones
+            legales</label
+          >
+        </div>
+        <button type="submit">Enviar</button>
+      </form>
     </section>
   </body>
 </html>

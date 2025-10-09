@@ -91,7 +91,7 @@ body {
   text-align: left;
   position: absolute;
   top: 38%;
-  left: 10%;
+  left: 15%;
   height: 100px;
   width: 140px;
 }
@@ -284,6 +284,7 @@ body {
   max-width: 80%;
   height: auto;
   display: block;
+  margin: 0 auto; /* centrar horizontalmente */
 }
 
 .slider-textos {
@@ -396,7 +397,8 @@ body {
 }
 .section-evidence{
   background-color: #EFE6DF;
-
+  margin: 0; /* asegurar que la sección no añada margen externo */
+  padding-bottom: 0; /* controlar espacio interior */
 }
 
 .section-evidence .evidence-container {
@@ -484,6 +486,76 @@ body {
   color: #ff3688;
   font-size: 14px;
 }
+
+.final-form{
+  text-align: center;
+  margin: 0; 
+  padding-top: 24px; 
+  height: 760px;
+  position: relative; /* contenedor para el video */
+  overflow: hidden;
+}
+label{
+  color: #fff
+}
+.final-form h2{ 
+  color: #fff;
+  margin: 0 0 12px 0; 
+  padding: 0;
+}
+.final-form form{
+  z-index: 5;
+}
+
+
+#video2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 1;
+  z-index: -1; /* asegurar que queda detrás */
+}
+
+/* overlay opcional para la sección final (mejora contraste sin bloquear interacciones) */
+.final-form::before{
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.15); /* semitransparente */
+  z-index: 0;
+  pointer-events: none;
+}
+
+.final-form {
+  position: relative; /* mantiene contexto para hijos posicionados */
+  text-align: center;
+  margin: 0;
+  padding-top: 24px;
+  height: 760px;
+  overflow: hidden;
+}
+
+/* Overlay negro semitransparente */
+.final-form::after {
+  content: "";
+  position: absolute;
+  inset: 0; /* top:0; right:0; bottom:0; left:0 */
+  background-color: rgba(0, 0, 0, 0.7); /* negro con opacidad 0.4, cambiar si se quiere más o menos */
+  z-index: 0; /* detrás de contenido pero sobre el video */
+  pointer-events: none; /* permite interacciones en formulario */
+}
+
+/* Ajustar el formulario para que quede encima del overlay */
+.final-form form {
+  position: relative;
+  z-index: 1; /* por encima del overlay */
+}
+
 
 * {
   text-transform: uppercase;
