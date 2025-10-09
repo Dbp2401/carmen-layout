@@ -179,10 +179,10 @@ body {
 
 .hero-image img {
   display: block;
-  width: 100vw; /* ocupar el ancho del viewport */
-  max-width: 100vw; /* asegurar que no exceda viewport */
+  width: 100vw;
+  max-width: 100vw;
   height: auto;
-  margin-left: calc((100% - 100vw) / 2); /* centrar respecto al contenedor */
+  margin-left: calc((100% - 100vw) / 2);
 }
 
 .hero-sub {
@@ -191,22 +191,6 @@ body {
   margin-top: 18px;
 }
 
-@media (max-width: 768px) {
-  .hero-title {
-    font-size: 20px;
-  }
-  .hero-image img {
-    width: 280px;
-  }
-}
-@media (max-width: 480px) {
-  .hero-title {
-    font-size: 18px;
-  }
-  .hero-image img {
-    width: 220px;
-  }
-}
 /* Cards: vídeos y layout de tarjetas */
 .card video {
   height: 600px;
@@ -217,64 +201,25 @@ body {
 
 .cards {
   display: flex;
-  justify-content: center; /* centro horizontal */
-  align-items: center; /* centro vertical dentro de la fila */
+  justify-content: center;
+  align-items: center;
   gap: 20px;
   padding: 20px;
   width: 100%;
-  max-width: 1200px; /* evita que crezca demasiado */
-  margin: 0 auto; /* centra el contenedor en el layout */
-  flex-wrap: wrap; /* en pantallas pequeñas los cards pasan a la siguiente línea */
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
 }
 
-/* Responsive: ajustar tamaño de los vídeos en pantallas pequeñas */
-@media (max-width: 900px) {
-  .card video {
-    width: 320px;
-    height: 420px;
-  }
-}
-@media (max-width: 480px) {
-  .card video {
-    width: 100%;
-    height: auto;
-    max-width: 360px;
-  }
-  .cards {
-    gap: 12px;
-    padding: 12px;
-  }
-}
 /* Offsets para cards individuales */
 #card3 {
   transform: translateY(30px);
   transition: transform 300ms ease;
 }
 
-@media (max-width: 900px) {
-  #card3 {
-    transform: translateY(18px);
-  }
-}
-@media (max-width: 480px) {
-  #card3 {
-    transform: translateY(8px);
-  }
-}
 #card2 {
-  transform: translateY(50px); /* más abajo que #card3 */
+  transform: translateY(50px);
   transition: transform 300ms ease;
-}
-
-@media (max-width: 900px) {
-  #card2 {
-    transform: translateY(30px);
-  }
-}
-@media (max-width: 480px) {
-  #card2 {
-    transform: translateY(16px);
-  }
 }
 body {
   color: #000000;
@@ -284,7 +229,7 @@ body {
   background-color: #ff3688;
   width: 100%;
   display: flex;
-  justify-content: center; /* centra horizontalmente */
+  justify-content: center;
   align-items: center;
   box-sizing: border-box;
 }
@@ -299,7 +244,7 @@ body {
   -webkit-mask-position: center;
   mask-position: center;
 
-  width: min(90vw, 400px); /* tamaño responsivo, ajustable */
+  width: min(90vw, 400px);
   height: auto;
   display: block;
   margin: 0 auto;
@@ -309,7 +254,7 @@ body {
   width: 100%;
   height: auto;
   display: block;
-  transform: none; /* quitar transform que desplazaba la imagen */
+  transform: none;
 }
 
 .texto-trinidad {
@@ -330,9 +275,9 @@ body {
 }
 .sponsors-section {
   width: 100%;
-  background-color: #ff3688; /* color rosa usado en el proyecto */
+  background-color: #ff3688;
   text-align: center;
-  border: none; /* quitar borde */
+  border: none;
 }
 
 .sponsors-section .sponsors {
@@ -346,17 +291,17 @@ body {
   width: 100%;
   height: 120px;
   overflow: hidden;
-  background-color: #fff;
+  background-color: #EFE6DF00;
 }
 
 .slider-track {
   display: flex;
-  width: 500%; /* 5 slides */
+  width: 500%;
   height: 100%;
 }
 
 .slider-textos .card {
-  flex: 0 0 20%; /* cada slide ocupa el 20% del ancho total */
+  flex: 0 0 20%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -373,7 +318,7 @@ body {
   text-align: left;
   width: 600px;
   height: auto;
-  background-color: #ffff;
+  background-color: #EFE6DF;
   border: 2px solid #ff3688;
 }
 
@@ -419,7 +364,7 @@ body {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.4);
+  background: #EFE6DF;
   color: #fff;
   border: none;
   width: 40px;
@@ -439,7 +384,7 @@ body {
 }
 
 .slider-section {
-  background-color: #fff;
+  background-color: #EFE6DF;
   padding: 0;
   h1 {
     margin: 0;
@@ -449,12 +394,16 @@ body {
     width: 65%;
   }
 }
+.section-evidence{
+  background-color: #EFE6DF;
+
+}
 
 .section-evidence .evidence-container {
   display: flex !important;
   flex-direction: row !important;
   align-items: center;
-  justify-content: flex-start; /* 👈 pegado a la izquierda */
+  justify-content: flex-start;
   gap: 32px;
   max-width: 1200px;
   margin: 0 auto;
@@ -470,7 +419,7 @@ body {
   }
 }
 .evidence-cards {
-  display: flex; /* pone las cards en fila */
+  display: flex;
   flex-direction: row;
   gap: 16px;
   margin-top: 16px;
@@ -478,31 +427,64 @@ body {
 
 .evidence-card {
   position: relative;
-  background-color: #eeeded;
-  border: 2px solid #ff3688;
   border-radius: 12px;
-  padding: 16px;
+  padding: 16px 16px 24px;
   text-align: center;
   flex: 1;
 }
 
 .imagenes-superpuestas {
   position: relative;
+  width: 100%;
+  height: 170px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .imagenes-superpuestas img {
   position: absolute;
-  top: 20px;
-  left: 0;
-  height: 60px;
+  height: auto;
+  max-height: 120px;
+  display: block;
 }
 
-.imagenes-superpuestas img:nth-child(2) {
-  top: 10px;
-  left: 30px;
+.imagenes-superpuestas img:nth-child(1) {
+  z-index: 1;
+  transform: translateX(0) translateY(40px) scale(2);
+}
+#elipse2 {
+  z-index: 2;
+  transform: translateX(0) translateY(-20px) scale(1);
+}
+#elipse4 {
+  z-index: 2;
+  transform: translateX(15px) translateY(20px) scale(1.75);
+}
+#elipse3 {
+  z-index: 2;
+  transform: translateX(0) translateY(25px) scale(1.9);
 }
 
 .imagenes-superpuestas img:nth-child(3) {
-  top: 20px;
-  left: 20px;
+  z-index: 3;
+  transform: translateX(0) translateY(130px) scale(1.5);
+}
+
+/* Asegurar separación entre la zona de imágenes y los textos */
+.evidence-card h3 {
+  color: #ff3688;
+  margin-top: 140px;
+  margin-bottom: 8px;
+  font-size: 18px;
+}
+
+.evidence-card p {
+  margin-top: 0;    
+  color: #ff3688;
+  font-size: 14px;
+}
+
+* {
+  text-transform: uppercase;
 }
