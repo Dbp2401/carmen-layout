@@ -7,37 +7,44 @@
     <script src="/assets/js/main.js"></script>
   </head>
   <body>
-    <!-- Video de fondo -->
-    <video id="video1" autoplay muted loop playinline>
-      <source src="/assets/video/video.mp4" type="video/mp4" />
-      Tu navegador no soporta el video.
-    </video>
-
-    <!-- Capa de filtro entre video y contenido -->
-    <div class="overlay"></div>
-
-    <!-- Contenido principal -->
-    <div class="container">
+    <header>
       <div class="barraSuperior">
         <img
           class="carmenLogo"
           src="/assets/img/carmenLogo.png"
           alt="Logo Carmen"
         />
-        <img class="menu" src="/assets/img/menu.png" alt="Menú" />
+        <nav class="menu">
+          <img
+            id="toggleMenu"
+            src="/assets/img/menu.png"
+            alt="Abrir menú"
+            style="cursor: pointer"
+          />
+          <ul id="menu" class="cerrado">
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Servicios</a></li>
+            <li><a href="#">Contacto</a></li>
+          </ul>
+        </nav>
       </div>
+    </header>
+    <!-- Contenido principal -->
+    <section>
+      <div class="container">
+        <!-- Video de fondo -->
+        <video id="video1" autoplay muted loop playinline>
+          <source src="/assets/video/video.mp4" type="video/mp4" />
+          Tu navegador no soporta el video.
+        </video>
+        <div class="overlay"></div>
 
-      <div class="carmenMedio">
-        <img src="/assets/img/carmen.png" alt="Carmen" />
+        <div class="carmenMedio">
+          <img src="/assets/img/carmenConTexto.png" alt="Carmen" />
+        </div>
+        <p class="t3">CONOCE CARMEN</p>
       </div>
-
-      <p class="t1">SALUD CON NOMBRE DE MUJER</p>
-      <p class="t2">
-        UNA INICIATIVA PARA VISIBILIZAR Y ACABAR CON LOS SESGOS DE GÉNERO EN
-        MEDICINA
-      </p>
-      <p class="t3">CONOCE CARMEN</p>
-    </div>
+    </section>
     <!-- Conoce Carmen -->
     <div class="imagenes">
       <div class="columna">
@@ -93,15 +100,15 @@
     </div>
     <!-- CARMEN  -->
 
-    <section class="hero-carmen">
-      <div class="hero-inner">
-        <h2 class="hero-title">
+    <section class="banner-carmen">
+      <div class="banner-inner">
+        <h2 class="banner-title">
           QUEREMOS IMPULSAR LA PERSPECTIVA DE GÉNERO EN EL TERRENO DE LA SALUD.
         </h2>
-        <div class="hero-image">
+        <div class="banner-image">
           <img src="/assets/img/carmen.png" alt="Carmen" />
         </div>
-        <p class="hero-sub">Detrás de Carmen hay muchos nombres propios</p>
+        <p class="banner-sub">Detrás de Carmen hay muchos nombres propios</p>
       </div>
     </section>
     <!--Trinidad Herrero-->
@@ -186,13 +193,13 @@
         </div>
         <p>EVIDENCIA CIENTIFICA EN MÁS DE 700 ENFERMEDADES</p>
       </div>
+      <img src="/assets/img/stats.png" />
 
       <div class="evidence-cards">
         <div class="evidence-card">
-          <div class="imagenes-superpuestas">
-            <img src="/assets/img/Ellipse1.png" />
-            <img src="/assets/img/Ellipse3.png" id="elipse3" />
-            <img src="/assets/img/Line1.png" />
+          <div class="imagen-stat">
+            <img src="/assets/img/stat1.png" alt="Estadística 1" />
+            <img src="/assets/img/linea.png" class="linea" />
           </div>
           <h3>infartos</h3>
           <p>
@@ -202,10 +209,13 @@
           </p>
         </div>
         <div class="evidence-card">
-          <div class="imagenes-superpuestas">
-            <img src="/assets/img/Ellipse1.png" />
-            <img src="/assets/img/Ellipse4.png" id="elipse4" />
-            <img src="/assets/img/Line1.png" />
+          <div class="imagen-stat">
+            <img
+              src="/assets/img/stat2.png"
+              alt="Estadística 2"
+              class="stat2"
+            />
+            <img src="/assets/img/linea.png" class="linea" />
           </div>
           <h3>depresión y ansiedad</h3>
           <p>
@@ -215,12 +225,15 @@
           </p>
         </div>
         <div class="evidence-card">
-          <div class="imagenes-superpuestas">
-            <img src="/assets/img/Ellipse1.png" />
-            <img src="/assets/img/Ellipse2.png" id="elipse2" />
-            <img src="/assets/img/Line1.png" />
+          <div class="imagen-stat">
+            <img
+              src="/assets/img/stat2.png"
+              alt="Estadística 3"
+              class="stat3"
+            />
+            <img src="/assets/img/linea.png" class="linea" />
           </div>
-          <h3>ictus</h3>
+          <h3 id="stat3-h3">ictus</h3>
           <p>
             Las mujeres presentan con mayor frecuencia sintomas inespecificos,
             viven solas, son sometidas a menos pruebas y hay importantes

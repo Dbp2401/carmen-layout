@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // Código del slider
   const track = document.querySelector('.slider-track');
   const prev = document.querySelector('.slider-prev');
   const next = document.querySelector('.slider-next');
@@ -17,5 +18,13 @@ document.addEventListener("DOMContentLoaded", () => {
   prev.addEventListener('click', () => {
     index = (index - 1 + totalSlides) % totalSlides;
     updateSlide();
+  });
+
+  // Código del menu cerrado/inicial
+  const toggleMenuBtn = document.querySelector('#toggleMenu');
+  const menu = document.querySelector('#menu');
+
+  toggleMenuBtn.addEventListener('click', () => {
+    menu.classList.toggle('cerrado');
   });
 });
