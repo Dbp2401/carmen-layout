@@ -64,6 +64,7 @@ body {
   align-items: center;
   padding: 10px;
   box-sizing: border-box;
+  z-index: 1000;
 }
 
 .carmenLogo {
@@ -455,6 +456,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 80%;
+  img{
+    width: 100%;
+    height: auto;
+  }
 }
 
 
