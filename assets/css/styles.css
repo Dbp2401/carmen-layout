@@ -1,8 +1,9 @@
 @charset "UTF-8";
 
 @font-face {
-  font-family: 'Roboto';
-  src: url('/assets/fonts/Roboto/RobotoCondensed-Regular.ttf') format('truetype');
+  font-family: "Roboto";
+  src: url("/assets/fonts/Roboto/RobotoCondensed-Regular.ttf")
+    format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -10,8 +11,8 @@
 /* Reset básico y tipografía */
 body {
   margin: 0;
-  background-color: #EFE6DF;
-  font-family: 'Roboto', sans-serif;
+  background-color: #efe6df;
+  font-family: "Roboto", sans-serif;
 }
 
 /* Layout: video de fondo, overlay y contenedor principal */
@@ -90,7 +91,6 @@ body {
   display: none;
 }
 
-
 /* Secciones: imagenes y columnas */
 .carmenMedio img {
   width: 100%;
@@ -165,45 +165,45 @@ body {
 .corazon-img {
   transform: translateX(5px) translateY(-3px);
 }
-#img1{
+#img1 {
   transform: translateX(-60px);
 }
-#img2, #img4{
+#img2,
+#img4 {
   transform: translateX(40px);
 }
-#img5{
-  transform: translateY(60px);
-
-}
-#img6{
+#img5 {
   transform: translateY(60px);
 }
-#img7{
+#img6 {
+  transform: translateY(60px);
+}
+#img7 {
   transform: translateY(-10px) translateX(40px);
 }
-#img9{
+#img9 {
   transform: translateX(80px) translateY(100px);
 }
-  
 
-#columnaDos, #columnaCinco{
+#columnaDos,
+#columnaCinco {
   padding-top: 150px;
 }
 /* Posicionar las corazon encima del texto en la columna central */
-#columnaCentral{
+#columnaCentral {
   padding-top: 350px;
   align-items: center;
   justify-content: center;
   position: relative; /* contenedor para posicionar las corazon */
 }
 
-.corazon{
+.corazon {
   position: absolute;
   top: 8%;
   left: 50%;
   transform: translateX(-50%);
 }
-.flechas-img{
+.flechas-img {
   transform: translateY(500px);
 }
 
@@ -221,7 +221,7 @@ body {
 
 #corazon {
   position: absolute;
-  top: 15%
+  top: 15%;
 }
 
 /* Banner */
@@ -263,22 +263,25 @@ body {
 }
 
 /* Cards: vídeos y layout de tarjetas */
+.card {
+  position: relative;
+  border-radius: 30px;
+  overflow: hidden;
+}
 .card video {
-  height: 600px;
-  width: 350px;
+  height: 892px;
+  width: 529px;
   object-fit: cover;
   border-radius: 30px;
 }
 
 .cards {
-  background: linear-gradient(to bottom, #EFE6DF 0%, #fff 100%);
+  background: linear-gradient(to bottom, #efe6df 0%, #fff 100%);
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   gap: 20px;
   padding: 20px;
-  width: 95%;
-  max-width: 95%;
   margin: 0 auto;
   margin-top: 80px;
   flex-wrap: wrap;
@@ -286,14 +289,67 @@ body {
 
 /* Offsets para cards individuales */
 #card3 {
-  transform: translateY(30px);
-  transition: transform 300ms ease;
+  transform: translateY(70px);
 }
 
 #card2 {
-  transform: translateY(50px);
-  transition: transform 300ms ease;
+  transform: translateY(200px);
 }
+
+/* Overlay genérico */
+.overlay-cards {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: justify;
+  justify-content: center;
+  color: white;
+  mix-blend-mode: multiply;
+  opacity: 0.6;
+  img{
+    margin-top: 300px;
+
+  }
+  h2 {
+    font-size: 50px;
+  }
+  p {
+    transform: translateY(-30px);
+    width: 70%;
+    font-size: 25px;
+  }
+}
+
+/* Colores de máscara personalizados */
+#card1 .overlay-cards {
+  background-color: #2c160a;
+}
+
+#card2 .overlay-cards {
+  background-color: #de0047;
+}
+
+#card3 .overlay-cards {
+  background-color: #ff3688;
+}
+
+#star,
+#bubble,
+#dots {
+  position: absolute;
+}
+#bubble {
+  transform: translateY(-185px);
+}
+#dots {
+  transform: translateY(-210px);
+}
+#star {
+  transform: translateY(-205px);
+}
+
 body {
   color: #000000;
 }
@@ -330,7 +386,6 @@ body {
   transform: none;
 }
 
-
 .texto-trinidad {
   background-color: #ff3688;
   color: #fff;
@@ -362,7 +417,7 @@ body {
 .slider-textos {
   width: 100%;
   margin: 0 auto;
-  background: #EFE6DF;
+  background: #efe6df;
   padding: 32px 0 0 0; /* agrega espacio arriba para los dots */
 }
 .slick-slide {
@@ -379,20 +434,19 @@ body {
   display: flex !important;
   align-items: center;
   justify-content: center;
-  transition: box-shadow .3s, opacity .3s;
+  transition: box-shadow 0.3s, opacity 0.3s;
   opacity: 0.4;
 }
 .slick-center {
   opacity: 1;
-  box-shadow: 0 4px 24px rgba(255,54,136,.13); /* resalta el slide central */
+  box-shadow: 0 4px 24px rgba(255, 54, 136, 0.13); /* resalta el slide central */
 }
 .slick-dots {
   bottom: 8px;
 }
 
-
-.section-evidence{
-  background-color: #EFE6DF;
+.section-evidence {
+  background-color: #efe6df;
   margin: 0; /* asegurar que la sección no añada margen externo */
   padding-bottom: 0; /* controlar espacio interior */
 }
@@ -431,7 +485,7 @@ body {
   flex: 1;
   object-fit: contain;
 }
-.imagen-stat{
+.imagen-stat {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -440,15 +494,14 @@ body {
   padding: 12px 0;
 }
 
-.imagen-stat img{
+.imagen-stat img {
   display: block;
   max-width: 100%;
   height: auto;
   margin: 0 auto;
 }
 
-
-.stat3{
+.stat3 {
   transform: rotate(45deg);
 }
 
@@ -468,32 +521,30 @@ body {
 }
 
 .evidence-card p {
-  margin-top: 0;    
+  margin-top: 0;
   color: #ff3688;
   font-size: 24px;
 }
 
-
-.final-form{
+.final-form {
   text-align: center;
-  margin: 0; 
-  padding-top: 24px; 
+  margin: 0;
+  padding-top: 24px;
   height: 760px;
   position: relative; /* contenedor para el video */
   overflow: hidden;
 }
-label{
-  color: #fff
-}
-.final-form h2{ 
+label {
   color: #fff;
-  margin: 0 0 12px 0; 
+}
+.final-form h2 {
+  color: #fff;
+  margin: 0 0 12px 0;
   padding: 0;
 }
-.final-form form{
+.final-form form {
   z-index: 5;
 }
-
 
 #video2 {
   position: absolute;
@@ -507,8 +558,6 @@ label{
   opacity: 1;
   z-index: -1; /* asegurar que queda detrás */
 }
-
-
 
 .final-form {
   position: relative; /* mantiene contexto para hijos posicionados */
@@ -524,7 +573,12 @@ label{
   content: "";
   position: absolute;
   inset: 0; /* top:0; right:0; bottom:0; left:0 */
-  background-color: rgba(0, 0, 0, 0.7); /* negro con opacidad 0.4, cambiar si se quiere más o menos */
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.7
+  ); /* negro con opacidad 0.4, cambiar si se quiere más o menos */
   z-index: 0; /* detrás de contenido pero sobre el video */
   pointer-events: none; /* permite interacciones en formulario */
 }
@@ -534,7 +588,6 @@ label{
   position: relative;
   z-index: 1; /* por encima del overlay */
 }
-
 
 * {
   text-transform: uppercase;
