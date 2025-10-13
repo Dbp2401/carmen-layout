@@ -4,6 +4,24 @@
     <meta charset="UTF-8" />
     <title>Carmen</title>
     <link rel="stylesheet" href="/assets/css/styles.css" />
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- Slick CSS -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
+    />
+    <!-- Slick JS -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+    ></script>
     <script src="/assets/js/main.js"></script>
   </head>
   <body>
@@ -48,33 +66,34 @@
     <!-- Conoce Carmen -->
     <div class="imagenes">
       <div class="columna">
-        <img src="/assets/img/p1.jpg" />
-        <img src="/assets/img/p2.jpg" />
-        <img src="/assets/img/p3.jpg" />
+        <img src="/assets/img/p1.jpg" id="img1"/>
+        <img src="/assets/img/p2.jpg" id="img2"/>
+        <img src="/assets/img/p3.jpg" id="img3"/>
       </div>
-      <div class="columna">
-        <img src="/assets/img/p4.jpg" />
-        <img src="/assets/img/p5.jpg" />
+      <div class="columna" id="columnaDos">
+        <img src="/assets/img/p4.jpg" id="img4"/>
+        <img src="/assets/img/p5.jpg" id="img5"/>
       </div>
       <div class="columna" id="columnaCentral">
-        <img src="/assets/img/logo1.png" />
-        <img src="/assets/img/corazon.png" height="50px" width="50px" />
+        <img src="/assets/img/logo1.png" id="corazon"/>
+        <img src="/assets/img/corazon.png" class="corazon-img" id="corazon"/>
         <p>
           CARMEN ES UNA ALIANZA DE DISTINTAS EMPRESAS E INSTITUCIONES
           COMPROMETIDAS EN VISIBILIZAR Y CAMBIAR LOS SESGOS DE GÉNERO QUE
-          AFECTAN A LA CALIDAD DE VIDA Y A LA SALUD DE LAS MUJERES. Y, CARMEN
+          AFECTAN A LA CALIDAD DE VIDA Y A LA SALUD DE LAS MUJERES. <br><br> Y, CARMEN
           SERÁ LA VOZ Y LA CARA DE LA SALUD DE LAS MUJERES.
         </p>
-        <img src="/assets/img/p6.jpg" />
+        <img src="/assets/img/lineas.png" class="flechas-img" id="corazon"/>
+        <img src="/assets/img/p6.jpg" id="img6"/>
       </div>
-      <div class="columna">
-        <img src="/assets/img/p7.jpg" />
-        <img src="/assets/img/p8.jpg" />
-        <img src="/assets/img/p9.jpg" />
+      <div class="columna" id="columnaCuatro">
+        <img src="/assets/img/p7.jpg" id="img7"/>
+        <img src="/assets/img/p8.jpg" id="img8"/>
+        <img src="/assets/img/p9.jpg" id="img9"/>
       </div>
-      <div class="columna">
-        <img src="/assets/img/p10.jpg" />
-        <img src="/assets/img/p11.jpg" />
+      <div class="columna" id="columnaCinco">
+        <img src="/assets/img/p10.jpg" id="img10"/>
+        <img src="/assets/img/p11.jpg" id="img11"/>
       </div>
     </div>
     <div class="cards">
@@ -150,41 +169,28 @@
       <img src="/assets/img/sponsors.png" alt="Sponsors" class="sponsors" />
     </section>
     <!--Slider Section-->
-    <section class="slider-section">
-      <h1>ALGUNOS DATOS PARA ENTENDER A CARMEN</h1>
-      <section class="slider-textos">
-        <div class="slider-track">
-          <div class="card">
-            <div class="slide">
-              45 minutos más que los hombres <br />
-              Es lo que tardan de media las en llegar al hospital cuando sufren
-              un infarto.
-            </div>
-          </div>
-          <div class="card">
-            <div class="slide">
-              La endometriosis tarda entre 7 y 10 años en ser detectada <br />
-              porque algunos de sus síntomas se consideran “normales” en la
-              mujer.
-            </div>
-          </div>
-          <div class="card">
-            <div class="slide">
-              Las mujeres experimentan casi el doble de reacciones adversas a
-              ciertos medicamentos
-            </div>
-          </div>
-          <div class="card">
-            <div class="slide">Texto de ejemplo numero cuatro</div>
-          </div>
-          <div class="card">
-            <div class="slide">Texto de ejemplo numero cinco</div>
-          </div>
-        </div>
+    <section class="slider-textos">
+  <div class="slider-track">
+    <div class="slide">
+      45 minutos más que los hombres <br>
+      Es lo que tardan de media en llegar al hospital cuando sufren un infarto.
+    </div>
+    <div class="slide">
+      La endometriosis tarda entre 7 y 10 años en ser detectada <br>
+      Porque algunos síntomas se consideran “normales” en la mujer.
+    </div>
+    <div class="slide">
+      Las mujeres experimentan casi el doble de reacciones adversas a ciertos medicamentos
+    </div>
+    <div class="slide">
+      Texto de ejemplo número cuatro
+    </div>
+    <div class="slide">
+      Texto de ejemplo número cinco
+    </div>
+  </div>
+</section>
 
-        <button class="slider-prev" aria-label="Anterior">‹</button>
-        <button class="slider-next" aria-label="Siguiente">›</button>
-      </section>
     </section>
     <section class="section-evidence">
       <div class="evidence-container">
@@ -193,7 +199,6 @@
         </div>
         <p>EVIDENCIA CIENTIFICA EN MÁS DE 700 ENFERMEDADES</p>
       </div>
-      <img src="/assets/img/stats.png" />
 
       <div class="evidence-cards">
         <div class="evidence-card">

@@ -10,7 +10,7 @@
 /* Reset básico y tipografía */
 body {
   margin: 0;
-  background-color: #fff;
+  background-color: #EFE6DF;
   font-family: 'Roboto', sans-serif;
 }
 
@@ -92,6 +92,7 @@ body {
   width: 100%;
   height: auto;
   z-index: -1;
+  max-width: 80%;
 }
 
 .t1,
@@ -131,17 +132,20 @@ body {
 
 .imagenes {
   display: flex;
-  justify-content: center;
+  justify-content: space-between; /* distribuir columnas a lo ancho */
   gap: 10px;
-  padding: 20px;
+  padding: 20px 10px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .columna {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  height: 600px;
+  gap: 200px;
   margin-top: 28px;
+  flex: 1 1 0; /* permitir que cada columna crezca para ocupar el espacio */
+  align-items: center;
 }
 
 .columna img {
@@ -151,22 +155,71 @@ body {
   border-radius: 200px;
 }
 
+/* Excluir las imágenes .corazon de la regla anterior */
+#corazon {
+  object-fit: scale-down;
+  border-radius: 0;
+}
+.corazon-img {
+  transform: translateX(5px) translateY(-3px);
+}
+#img1{
+  transform: translateX(-60px);
+}
+#img2, #img4{
+  transform: translateX(40px);
+}
+#img5{
+  transform: translateY(60px);
+
+}
+#img6{
+  transform: translateY(60px);
+}
+#img7{
+  transform: translateY(-10px) translateX(40px);
+}
+#img9{
+  transform: translateX(80px) translateY(100px);
+}
+  
+
+#columnaDos, #columnaCinco{
+  padding-top: 150px;
+}
+/* Posicionar las corazon encima del texto en la columna central */
+#columnaCentral{
+  padding-top: 350px;
+  align-items: center;
+  justify-content: center;
+  position: relative; /* contenedor para posicionar las corazon */
+}
+
+.corazon{
+  position: absolute;
+  top: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.flechas-img{
+  transform: translateY(500px);
+}
+
 #columnaCentral {
   align-items: center;
   justify-content: center;
 }
 
 #columnaCentral p {
-  text-align: left;
+  text-align: justify;
   color: #ff3688;
-  width: 325px;
-  height: 358px;
+  font-size: 20px;
+  width: 300px;
 }
 
 #corazon {
   position: absolute;
-  width: 50px;
-  height: 500px;
+  top: 15%
 }
 
 /* Banner */
@@ -224,6 +277,7 @@ body {
   width: 95%;
   max-width: 95%;
   margin: 0 auto;
+  margin-top: 80px;
   flex-wrap: wrap;
 }
 
@@ -305,113 +359,37 @@ body {
 }
 
 .slider-textos {
-  position: relative;
   width: 100%;
-  height: 120px;
-  overflow: hidden;
-  background-color: #EFE6DF00;
+  margin: 0 auto;
+  background: #EFE6DF;
+  padding: 32px 0 0 0; /* agrega espacio arriba para los dots */
 }
-
-.slider-track {
-  display: flex;
-  width: 500%;
-  height: 100%;
-}
-
-.slider-textos .card {
-  flex: 0 0 20%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  padding: 10px;
-}
-
-.slider-textos .slide {
+.slick-slide {
+  box-sizing: border-box;
+  background-color: #fff;
+  border: 2px solid #ff3688;
   color: #ff3688;
-  font-size: 20px;
+  font-size: 28px;
   font-weight: bold;
   border-radius: 20px;
-  padding: 20px;
-  text-align: left;
-  width: 100%;
-  height: auto;
-  background-color: #EFE6DF;
-  border: 2px solid #ff3688;
-}
-
-@keyframes slideTrack {
-  0% {
-    transform: translateX(0%);
-  }
-  16% {
-    transform: translateX(0%);
-  }
-  20% {
-    transform: translateX(-100%);
-  }
-  36% {
-    transform: translateX(-100%);
-  }
-  40% {
-    transform: translateX(-200%);
-  }
-  56% {
-    transform: translateX(-200%);
-  }
-  60% {
-    transform: translateX(-300%);
-  }
-  76% {
-    transform: translateX(-300%);
-  }
-  80% {
-    transform: translateX(-400%);
-  }
-  96% {
-    transform: translateX(-400%);
-  }
-  100% {
-    transform: translateX(0%);
-  }
-}
-
-/* Prev/Next buttons */
-.slider-prev,
-.slider-next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: #EFE6DF;
-  color: #fff;
-  border: none;
-  width: 40px;
-  height: 40px;
-  border-radius: 20px;
-  cursor: pointer;
-  display: flex;
+  padding: 24px;
+  margin: 0 8px;
+  min-height: 180px;
+  display: flex !important;
   align-items: center;
   justify-content: center;
-  font-size: 22px;
+  transition: box-shadow .3s, opacity .3s;
+  opacity: 0.4;
 }
-.slider-prev {
-  left: 12px;
+.slick-center {
+  opacity: 1;
+  box-shadow: 0 4px 24px rgba(255,54,136,.13); /* resalta el slide central */
 }
-.slider-next {
-  right: 12px;
+.slick-dots {
+  bottom: 8px;
 }
 
-.slider-section {
-  background-color: #EFE6DF;
-  padding: 0;
-  h1 {
-    margin: 0;
-    padding: 20px 0;
-    color: #ff3688;
-    font-size: 100px;
-    width: 65%;
-  }
-}
+
 .section-evidence{
   background-color: #EFE6DF;
   margin: 0; /* asegurar que la sección no añada margen externo */
@@ -440,6 +418,7 @@ body {
   display: flex;
   flex-direction: row;
   gap: 16px;
+  max-width: 95%;
 }
 
 .evidence-card {
@@ -449,18 +428,22 @@ body {
   padding: 16px 16px 24px;
   text-align: center;
   flex: 1;
-  height: 800px;
   object-fit: contain;
 }
 .imagen-stat{
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 80%;
-  img{
-    width: 100%;
-    height: auto;
-  }
+  width: 100%;
+  position: relative; /* para posicionar .linea si es absoluta */
+  padding: 12px 0;
+}
+
+.imagen-stat img{
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
 }
 
 
@@ -469,9 +452,10 @@ body {
 }
 
 .linea {
-    position: absolute;
-    height: 250px;
-    top: 200px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 /* Asegurar separación entre la zona de imágenes y los textos */

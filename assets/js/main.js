@@ -1,30 +1,26 @@
-document.addEventListener("DOMContentLoaded", () => {
-  // Código del slider
-  const track = document.querySelector('.slider-track');
-  const prev = document.querySelector('.slider-prev');
-  const next = document.querySelector('.slider-next');
-  const totalSlides = document.querySelectorAll('.slider-track .card').length;
-  let index = 0;
+$(function() {
+  // Slider usando slick
+ $('.slider-track').slick({
+  centerMode: true,
+  centerPadding: '80px',
+  slidesToShow: 1,
+  arrows: false,      // opcional, puedes activarlos si quieres flechas
+  dots: true,         // puntos abajo como en tu imagen
+  responsive: [
+    {
+      breakpoint: 768,
+      settings: {
+        centerPadding: '20px'
+      }
+    }
+  ]
+});
 
-  function updateSlide() {
-    track.style.transform = `translateX(-${index * (100 / totalSlides)}%)`;
-  }
+  // Código del menú cerrado/inicial
+  const $toggleMenuBtn = $('#toggleMenu');
+  const $menu = $('#menu');
 
-  next.addEventListener('click', () => {
-    index = (index + 1) % totalSlides;
-    updateSlide();
-  });
-
-  prev.addEventListener('click', () => {
-    index = (index - 1 + totalSlides) % totalSlides;
-    updateSlide();
-  });
-
-  // Código del menu cerrado/inicial
-  const toggleMenuBtn = document.querySelector('#toggleMenu');
-  const menu = document.querySelector('#menu');
-
-  toggleMenuBtn.addEventListener('click', () => {
-    menu.classList.toggle('cerrado');
+  $toggleMenuBtn.on('click', function() {
+    $menu.toggleClass('cerrado');
   });
 });
