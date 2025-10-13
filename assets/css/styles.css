@@ -75,6 +75,10 @@ body {
   display: block;
 }
 
+.flechas {
+  transform: translateY(300px);
+}
+
 .menu {
   width: 105px;
   height: 27px;
@@ -92,14 +96,13 @@ body {
   width: 100%;
   height: auto;
   z-index: -1;
-  max-width: 80%;
+  max-width: 95%;
 }
 
 .t1,
 .t2,
 .t3 {
   color: #fff;
-  font-family: sans-serif;
 }
 
 .t1 {
@@ -125,9 +128,8 @@ body {
 
 .t3 {
   font-size: 24px;
-  font-weight: bold;
   position: absolute;
-  top: 80%;
+  transform: translateY(400px);
 }
 
 .imagenes {
@@ -269,6 +271,7 @@ body {
 }
 
 .cards {
+  background: linear-gradient(to bottom, #EFE6DF 0%, #fff 100%);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -347,8 +350,6 @@ body {
 .sponsors-section {
   width: 100%;
   background-color: #ff3688;
-  text-align: center;
-  border: none;
 }
 
 .sponsors-section .sponsors {
