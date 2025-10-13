@@ -3,9 +3,13 @@ $(function() {
  $('.slider-track').slick({
   centerMode: true,
   centerPadding: '80px',
-  slidesToShow: 1,
-  arrows: false,      // opcional, puedes activarlos si quieres flechas
-  dots: true,         // puntos abajo como en tu imagen
+  slidesToShow: 3,
+  variableWidth: true,
+  centerMode: true,
+  infinite: true,
+  autoplay: false,
+  autoplaySpeed: 3000,
+  dots: true,
   responsive: [
     {
       breakpoint: 768,
