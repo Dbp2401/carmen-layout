@@ -226,40 +226,52 @@ body {
 
 /* Banner */
 .banner-carmen {
-  background: linear-gradient(to bottom, #ffffff 0%, #ff3688 100%);
-  padding: 60px 20px;
+  background: linear-gradient(to bottom, #ffffff 0%, #efe6df 50%, #ff3688 100%);
   height: 1000px;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: 300px;
 }
 
 .banner-inner {
+  display: flex;
+  flex-direction: column;
   text-align: center;
-  max-width: 600px;
+  align-items: center;
   width: 100%;
 }
 
 .banner-title {
-  font-size: 28px;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: #000;
-  margin: 0 0 24px 0;
+  font-size: 92px;
+  max-width: 60%;
+  color: #ff3688;
+  margin-bottom: 200px;
 }
 
-.banner-image img {
-  display: block;
+.banner-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   max-width: 100%;
   height: auto;
-  margin-left: calc((100% - 100%) / 2);
+}
+#carmen{
+  width: 100%;
 }
 
 .banner-sub {
-  font-size: 12px;
-  color: #333;
-  margin-top: 18px;
+  font-size: 32px;
+  max-width: 30%;
+  color: #fff;
+}
+
+#corazones {
+  max-height: 300px;
+  width: auto;
+  padding-top: 50px;
 }
 
 /* Cards: vídeos y layout de tarjetas */
@@ -285,6 +297,7 @@ body {
   margin: 0 auto;
   margin-top: 80px;
   flex-wrap: wrap;
+  padding-bottom: 600px;
 }
 
 /* Offsets para cards individuales */
@@ -355,6 +368,7 @@ body {
 }
 
 .trinidad {
+  padding-top: 300px;
   background-color: #ff3688;
   width: 100%;
   display: flex;
