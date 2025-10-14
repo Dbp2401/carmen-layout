@@ -377,7 +377,7 @@ body {
 }
 .trinidad .wrapper-image {
   width: 50%;
-  margin: 0px 300px;
+  margin: 0px 15%;
   img {
     width: 100%;
     height: auto;
@@ -385,7 +385,7 @@ body {
 }
 
 .trinidad .svg-trinidad {
-  width: 428px;
+  width: 23%;
 }
 
 .texto-trinidad {
@@ -434,7 +434,7 @@ body {
   background: #efe6df;
   .slider-title {
     color: #ff3688;
-    font-size: 162px;
+    font-size: 13vw;
     width: 100%;
     margin: 0 0 20px 0;
     text-align: left;
@@ -530,7 +530,7 @@ body {
   width: 100%;
   p {
     color: #ff3688;
-    font-size: 162px;
+    font-size: 9vw;
     width: 60%;
   }
 }
@@ -597,11 +597,11 @@ body {
   position: relative; /* contenedor para el video */
   overflow: hidden;
   input {
-    margin: 50px 20px;
+    margin: 50px 65px;
     width: 35%;
     background-color: transparent;
     border: none;
-    border-bottom: 2px solid #fff;
+    border-bottom: 1px solid #fff;
     font-size: 32px;
   }
   img {
@@ -655,16 +655,22 @@ label {
 .final-form .input-group {
   width: 100%;
 }
+input::placeholder {
+  font-family: "Roboto", sans-serif;
+}
 .subrayado {
   text-decoration: underline;
 }
 .final-form .condiciones {
-  font-size: 21px;
+    font-size: 19px;
+    margin-right: 120px;
 }
 .final-form .checkbox-container {
   display: flex;
   align-items: baseline;
   width: 50%;
+  justify-content: center;
+  margin-right: 20px;
   
 }
 .final-form .checkbox {
@@ -675,18 +681,24 @@ label {
   background: transparent;
   border-radius: 4px;
   cursor: pointer;
+  margin: 0;
+  margin-right: 20px;
+
 }
 .final-form input[type="checkbox"]:checked {
   background-color: #ff3688; 
   border-color: #ff3688;
 }
 .final-form .btn-enviar {
-  color: #fff;
-  border: 2px solid #ff3688;
-  font-size: 38px;
-  width: 50%;
-  background-color: transparent;
-  font-family: "Roboto";
+    color: #fff;
+    border: 2px solid #ff3688;
+    font-size: 38px;
+    width: 38%;
+    height: 70px;
+    background-color: transparent;
+    font-family: "Roboto";
+    margin: 20px 220px 123px 0px;
+    border-radius: 10px;
   img{
     max-width: 30px;
   }
