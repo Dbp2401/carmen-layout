@@ -7,8 +7,9 @@ $(function() {
   variableWidth: true,
   centerMode: true,
   infinite: true,
-  autoplay: false,
+  autoplay: true,
   autoplaySpeed: 3000,
+  arrows: false,
   dots: true,
   responsive: [
     {
