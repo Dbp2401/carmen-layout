@@ -3,7 +3,7 @@ $(function() {
  $('.slider-track').slick({
   centerMode: true,
   centerPadding: '80px',
-  slidesToShow: 3,
+  slidesToShow: 1,
   variableWidth: true,
   centerMode: true,
   infinite: true,
