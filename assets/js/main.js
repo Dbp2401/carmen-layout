@@ -7,7 +7,7 @@ $(function () {
     variableWidth: true,
     centerMode: true,
     infinite: true,
-    autoplay: true,
+    //autoplay: true,
     autoplaySpeed: 3000,
     arrows: false,
     dots: true,

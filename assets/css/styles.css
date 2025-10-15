@@ -40,12 +40,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-      0deg,
-      rgba(255, 54, 136, 0.43),
-      rgba(255, 54, 136, 0.43)
-    ),
-    linear-gradient(0deg, #000000, #000000);
+  background: #FF3688;
   opacity: 0.43;
   z-index: -2;
 }
@@ -84,22 +79,48 @@ body {
   display: block;
 }
 
-.flechas {
+.section-inicio .flechas-img {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
   transform: translateY(300px);
+}
+
+.flecha:nth-child(2) {
+  animation: converger 4s ease-in-out infinite alternate;
+}
+.flecha:nth-child(3) {
+  animation: converger3 4s ease-in-out infinite alternate;
+}
+.flecha {
+  --moveY: 0px; /* por defecto */
+  animation: converger var(--duration, 4s) ease-in-out infinite alternate;
+}
+
+.flecha:nth-child(2) { --moveY: -22.5px; }
+.flecha:nth-child(3) { --moveY: -45px; }
+.flecha:nth-child(4) { --moveY: -67.5px; }
+
+@keyframes converger {
+  0%, 100% { transform: translateY(0); }
+  40%, 75% { transform: translateY(var(--moveY)); }
+}
+@keyframes converger3 {
+  0%, 100% { transform: translateY(0); }
+  40%, 75% { transform: translateY(var(--moveY)); }
 }
 
 .menu {
   position: relative;
   z-index: 10;
   background: transparent;
-  width: 200px;
   height: 27px;
   margin-right: 20px;
   cursor: pointer;
-  li{
+  li {
     margin-top: 20px;
   }
-  a{
+  a {
     text-decoration: none;
     color: inherit;
   }
@@ -133,7 +154,7 @@ header.scrolled {
   background-color: rgba(0, 0, 0, 0.9); /* fondo negro */
 }
 
-#menu{
+#menu {
   background-color: #000000;
   opacity: 0.9;
 }
@@ -183,7 +204,20 @@ header.scrolled {
   transform: translateY(400px);
 }
 
-.imagenes {
+.flecha {
+  width: 24px;
+  height: 12px;
+}
+
+.section-imagenes .flechas-img {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transform: translateY(300px);
+  position: absolute;
+  top: 35%;
+}
+.section-imagenes {
   display: flex;
   justify-content: space-between; /* distribuir columnas a lo ancho */
   gap: 10px;
@@ -201,7 +235,7 @@ header.scrolled {
   align-items: center;
 }
 
-.columna img {
+.columna .foto {
   width: 139px;
   height: 205px;
   object-fit: cover;
@@ -248,9 +282,7 @@ header.scrolled {
   position: relative; /* contenedor para posicionar las corazon */
 }
 
-.flechas-img {
-  transform: translateY(500px);
-}
+
 
 #columnaCentral {
   align-items: center;
@@ -323,7 +355,7 @@ header.scrolled {
 .card {
   border-radius: 30px;
   overflow: hidden;
-  position:relative;
+  position: relative;
 }
 .card video {
   height: 892px;
@@ -356,10 +388,11 @@ header.scrolled {
 /* Overlay genérico */
 .overlay-cards {
   position: absolute;
-  top:0;
-  left:0;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 100%;
+  height: 892px;
+  border-radius: 30px;
   mix-blend-mode: multiply;
   opacity: 0.6;
 }
@@ -393,13 +426,12 @@ header.scrolled {
 }
 
 #card2 .overlay-cards {
-  background-color: #DE0047;
+  background-color: #de0047;
 }
 
 #card3 .overlay-cards {
   background-color: #ff3688;
 }
-
 
 .trinidad {
   padding-top: 100px;
@@ -706,8 +738,8 @@ input::placeholder {
   text-decoration: underline;
 }
 .final-form .condiciones {
-    font-size: 19px;
-    margin-right: 120px;
+  font-size: 19px;
+  margin-right: 120px;
 }
 .final-form .checkbox-container {
   display: flex;
@@ -715,7 +747,6 @@ input::placeholder {
   width: 50%;
   justify-content: center;
   margin-right: 20px;
-  
 }
 .final-form .checkbox {
   appearance: none;
@@ -727,23 +758,22 @@ input::placeholder {
   cursor: pointer;
   margin: 0;
   margin-right: 20px;
-
 }
 .final-form input[type="checkbox"]:checked {
-  background-color: #ff3688; 
+  background-color: #ff3688;
   border-color: #ff3688;
 }
 .final-form .btn-enviar {
-    color: #fff;
-    border: 2px solid #ff3688;
-    font-size: 38px;
-    width: 38%;
-    height: 70px;
-    background-color: transparent;
-    font-family: "Roboto";
-    margin: 20px 220px 123px 0px;
-    border-radius: 10px;
-  img{
+  color: #fff;
+  border: 2px solid #ff3688;
+  font-size: 38px;
+  width: 38%;
+  height: 70px;
+  background-color: transparent;
+  font-family: "Roboto";
+  margin: 20px 220px 123px 0px;
+  border-radius: 10px;
+  img {
     max-width: 30px;
   }
 }

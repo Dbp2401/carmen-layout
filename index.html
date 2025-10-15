@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="/assets/css/styles.css" />
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <!-- Slick CSS -->
+    <!--Slick CSS -->
     <link
       rel="stylesheet"
       type="text/css"
@@ -17,7 +17,7 @@
       type="text/css"
       href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
     />
-    <!-- Slick JS -->
+    <!--Slick JS -->
     <script
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
@@ -52,10 +52,9 @@
       </div>
     </header>
 
-    <!-- Contenido principal -->
 
     <!-- Primera sección -->
-    <section id="inicio">
+    <section class="section-inicio" id="inicio">
       <div class="container">
         <video id="video1" autoplay muted loop playinline>
           <source src="/assets/video/video.mp4" type="video/mp4" />
@@ -67,45 +66,53 @@
           <img src="/assets/img/carmenConTexto.png" alt="Carmen" />
         </div>
         <p class="t3">CONOCE CARMEN</p>
-        <img src="/assets/img/flechas.png" class="flechas" />
+        <div class="flechas-img">
+          <img src="/assets/img/flecha.png" class="flecha "/>
+          <img src="/assets/img/flecha.png" class="flecha "/>
+          <img src="/assets/img/flecha.png" class="flecha "/>
+        </div>
       </div>
     </section>
 
-    <!-- Conoce Carmen -->
-    <section class="imagenes" id="imagenes">
+    <!--Conoce Carmen -->
+    <section class="section-imagenes" id="imagenes">
       <div class="columna">
-        <img src="/assets/img/p1.jpg" id="img1" />
-        <img src="/assets/img/p2.jpg" id="img2" />
-        <img src="/assets/img/p3.jpg" id="img3" />
+        <img src="/assets/img/p1.jpg" class="foto" id="img1" />
+        <img src="/assets/img/p2.jpg" class="foto" id="img2" />
+        <img src="/assets/img/p3.jpg" class="foto" id="img3" />
       </div>
       <div class="columna" id="columnaDos">
-        <img src="/assets/img/p4.jpg" id="img4" />
-        <img src="/assets/img/p5.jpg" id="img5" />
+        <img src="/assets/img/p4.jpg" class="foto" id="img4" />
+        <img src="/assets/img/p5.jpg" class="foto" id="img5" />
       </div>
       <div class="columna" id="columnaCentral">
-        <img src="/assets/img/logo1.png" id="corazon" />
-        <img src="/assets/img/corazon.png" class="corazon-img" id="corazon" />
+        <img src="/assets/img/logo-corazon.png" class="corazon-img" id="corazon" />
         <p>
           CARMEN ES UNA ALIANZA DE DISTINTAS EMPRESAS E INSTITUCIONES
           COMPROMETIDAS EN VISIBILIZAR Y CAMBIAR LOS SESGOS DE GÉNERO QUE
           AFECTAN A LA CALIDAD DE VIDA Y A LA SALUD DE LAS MUJERES. <br /><br />
           Y, CARMEN SERÁ LA VOZ Y LA CARA DE LA SALUD DE LAS MUJERES.
         </p>
-        <img src="/assets/img/lineas.png" class="flechas-img" id="corazon" />
-        <img src="/assets/img/p6.jpg" id="img6" />
+        <div class="flechas-img">
+          <img src="/assets/img/flecha-rosa.png" class="flecha "/>
+          <img src="/assets/img/flecha-rosa.png" class="flecha "/>
+          <img src="/assets/img/flecha-rosa.png" class="flecha "/>
+          <img src="/assets/img/flecha-rosa.png" class="flecha "/>
+        </div>
+        <img src="/assets/img/p6.jpg" class="foto" id="img6" />
       </div>
       <div class="columna" id="columnaCuatro">
-        <img src="/assets/img/p7.jpg" id="img7" />
-        <img src="/assets/img/p8.jpg" id="img8" />
-        <img src="/assets/img/p9.jpg" id="img9" />
+        <img src="/assets/img/p7.jpg" class="foto" id="img7" />
+        <img src="/assets/img/p8.jpg" class="foto" id="img8" />
+        <img src="/assets/img/p9.jpg" class="foto" id="img9" />
       </div>
       <div class="columna" id="columnaCinco">
-        <img src="/assets/img/p10.jpg" id="img10" />
-        <img src="/assets/img/p11.jpg" id="img11" />
+        <img src="/assets/img/p10.jpg" class="foto" id="img10" />
+        <img src="/assets/img/p11.jpg" class="foto" id="img11" />
       </div>
     </section>
 
-    <!-- Cards con videos -->
+    <!--Cards con videos -->
     <section class="cards" id="objetivos">
       <div class="card" id="card1">
         <video autoplay muted loop playinline>
@@ -156,7 +163,7 @@
       </div>
     </section>
 
-    <!-- CARMEN  -->
+    <!- CARMEN  -->
     <section class="banner-carmen">
       <div class="banner-inner">
         <h2 class="banner-title">
@@ -225,7 +232,7 @@
       </p>
       <div class="slider-track">
         <div class="slide">
-          <img src="/assets/img/logo-rosa.png" />
+          <img src="/assets/img/logo .png" />
           <p>
             <span class="highlight1">45 minutos más que los hombres</span>
             <br />
@@ -250,7 +257,7 @@
         </div>
       </div>
     </section>
-    <!-- Evidence Section -->
+    <!- Evidence Section -->
     <section class="section-evidence">
       <div class="evidence-container">
         <div class="wrapper-image">
@@ -309,7 +316,7 @@
         </div>
       </div>
     </section>
-    <!-- Form Section-->
+    <!- Form Section-->
     <section class="final-form" id="contacto">
       <video id="video2" autoplay muted loop playinline>
         <source src="/assets/video/fondo-form.mp4" type="video/mp4" />
