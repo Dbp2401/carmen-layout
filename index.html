@@ -23,6 +23,9 @@
       src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
     ></script>
     <script src="/assets/js/main.js"></script>
+    <!--GSAP-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
   </head>
   <body>
     <header>
@@ -40,9 +43,10 @@
             style="cursor: pointer"
           />
           <ul id="menu" class="cerrado">
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Servicios</a></li>
-            <li><a href="#">Contacto</a></li>
+            <li><a href="#imagenes">Conoce a Carmen</a></li>
+            <li><a href="#objetivos">Objetivos</a></li>
+            <li><a href="#integrantes">Quien forma Carmen</a></li>
+            <li><a href="#contexto">Contexto social</a></li>
           </ul>
         </nav>
       </div>
@@ -51,7 +55,7 @@
     <!-- Contenido principal -->
 
     <!-- Primera sección -->
-    <section>
+    <section id="inicio">
       <div class="container">
         <video id="video1" autoplay muted loop playinline>
           <source src="/assets/video/video.mp4" type="video/mp4" />
@@ -68,7 +72,7 @@
     </section>
 
     <!-- Conoce Carmen -->
-    <div class="imagenes">
+    <section class="imagenes" id="imagenes">
       <div class="columna">
         <img src="/assets/img/p1.jpg" id="img1" />
         <img src="/assets/img/p2.jpg" id="img2" />
@@ -99,24 +103,25 @@
         <img src="/assets/img/p10.jpg" id="img10" />
         <img src="/assets/img/p11.jpg" id="img11" />
       </div>
-    </div>
+    </section>
 
     <!-- Cards con videos -->
-    <section class="cards">
+    <section class="cards" id="objetivos">
       <div class="card" id="card1">
         <video autoplay muted loop playinline>
           <source src="/assets/video/card1.mp4" type="video/mp4" />
           Tu navegador no soporta el video.
         </video>
         <div class="overlay-cards"></div>
-        <div class="card-content"><img src="assets/img/card-logo1.png" />
+        <div class="card-content">
+          <img src="assets/img/card-logo1.png" />
           <h2>PENSAR</h2>
           <p>
             Impulsar nuevas evidencias científicas que ayuden a tratar la salud
             de la mujer en todas sus dimensiones. Para ello hemos creado un
             Comité Académico que trabaje en la generación de conocimiento.
-          </p></div>
-          
+          </p>
+        </div>
       </div>
       <div class="card" id="card2">
         <video autoplay muted loop playinline>
@@ -169,7 +174,7 @@
     </section>
 
     <!--Trinidad Herrero-->
-    <section class="trinidad">
+    <section class="trinidad" id="integrantes">
       <div class="trinidad-imagenes">
         <img src="/assets/svg/forma1.svg" class="svg-trinidad" />
         <div class="wrapper-image">
@@ -212,7 +217,7 @@
     </section>
 
     <!--Slider Section-->
-    <section class="slider-textos">
+    <section class="slider-textos" id="contexto">
       <p class="slider-title">
         Algunos datos <br />
         para entender <br />
@@ -305,7 +310,7 @@
       </div>
     </section>
     <!-- Form Section-->
-    <section class="final-form">
+    <section class="final-form" id="contacto">
       <video id="video2" autoplay muted loop playinline>
         <source src="/assets/video/fondo-form.mp4" type="video/mp4" />
         Tu navegador no soporta el video.

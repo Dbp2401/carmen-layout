@@ -72,7 +72,8 @@ body {
   align-items: center;
   padding: 10px;
   box-sizing: border-box;
-  z-index: 1000;
+  z-index: 5;
+  padding: 40px;
 }
 
 .carmenLogo {
@@ -88,10 +89,53 @@ body {
 }
 
 .menu {
-  width: 105px;
+  position: relative;
+  z-index: 10;
+  background: transparent;
+  width: 200px;
   height: 27px;
   margin-right: 20px;
   cursor: pointer;
+  li{
+    margin-top: 20px;
+  }
+  a{
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s ease;
+  z-index: 1000;
+  transform: translateY(0);
+  opacity: 1;
+  background-color: transparent; /* al principio transparente */
+}
+
+/* cuando se oculta */
+header:not(.show) {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+/* cuando aparece tras scroll hacia arriba */
+header.scrolled {
+  background-color: rgba(0, 0, 0, 0.9); /* fondo negro */
+}
+
+#menu{
+  background-color: #000000;
+  opacity: 0.9;
 }
 
 #menu.cerrado {
