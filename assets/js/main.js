@@ -7,7 +7,7 @@ $(function () {
     variableWidth: true,
     centerMode: true,
     infinite: true,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 3000,
     arrows: false,
     dots: true,
@@ -53,9 +53,8 @@ $(function () {
     ease: "power1.inOut",
   });
 
-
-    const $menuLateral = $("#menuLateral");
-    const $toggleMenuBtn = $("#toggleMenu");
+  const $menuLateral = $("#menuLateral");
+  const $toggleMenuBtn = $("#toggleMenu");
 
   $(function () {
     let lastScrollTop = 0;
@@ -129,5 +128,48 @@ $(function () {
       ease: "power2.inOut",
       onComplete: () => $("#menuLateral").removeClass("abierto"),
     });
+  });
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const desplazamientosY = [
+    -50, // card izquierda va hacia arriba 50px
+    150, // card del medio va hacia abajo 150px
+    70, // card derecha va hacia abajo 70px
+  ];
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const mm = gsap.matchMedia();
+
+  mm.add("(min-width: 1200px)", () => {
+    const desplazamientosY = [-50, 150, 70];
+
+    gsap.utils.toArray(".card").forEach((card, index) => {
+      const yOffset = desplazamientosY[index] || 0;
+
+      // Estado inicial alineado
+      gsap.set(card, { y: 0 });
+
+      // Crear ScrollTrigger para controlar animación
+      ScrollTrigger.create({
+        trigger: card,
+        start: "top 90%",
+        end: "top 50%",
+        scrub: true,
+        onEnter: () => {
+          gsap.to(card, { y: yOffset, duration: 0.5, ease: "power1.out" });
+        },
+        onLeaveBack: () => {
+          gsap.to(card, { y: 0, duration: 0.5, ease: "power1.in" });
+        },
+      });
+    });
+
+    // Retornar función para limpiar animaciones si cambia resolución
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+      gsap.utils.toArray(".card").forEach((card) => gsap.set(card, { y: 0 }));
+    };
   });
 });

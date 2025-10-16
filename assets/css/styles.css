@@ -79,7 +79,7 @@ header {
   display: flex;
   color: white;
   transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s ease;
-  z-index: 2; 
+  z-index: 3; 
   background-color: transparent;
   opacity: 1;
 }
@@ -430,7 +430,7 @@ header.scrolled {
 }
 
 .cards .corazon {
-  margin-top: 100px;
+  margin-top: 200px;
   width: 50px;
   height: 50px;
   position: relative;
@@ -612,6 +612,9 @@ header.scrolled {
   transform: scale(0.7);
   transition: box-shadow 0.3s, opacity 0.3s;
 }
+.slick-track{
+  margin: 10px;
+}
 
 .slick-track .slick-center {
   opacity: 1;
@@ -625,7 +628,7 @@ header.scrolled {
   content: "";
   position: absolute;
   top: 0;
-  width: 500px;
+  width: 5%;
   height: 100%;
   pointer-events: none;
   z-index: 2;
