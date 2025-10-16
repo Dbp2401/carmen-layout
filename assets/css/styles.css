@@ -1,5 +1,10 @@
+/* =========================================================
+   CONFIGURACIÓN GENERAL
+========================================================= */
+
 @charset "UTF-8";
 
+/* Tipografía */
 @font-face {
   font-family: "Roboto";
   src: url("/assets/fonts/Roboto/RobotoCondensed-Regular.ttf")
@@ -8,21 +13,24 @@
   font-style: normal;
 }
 
+/* Reset básico */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  /* text-decoration: none;  para poder poner estilo a textos sin hacerle clase*/
   list-style: none;
+  text-transform: uppercase;
 }
 
-/* Reset básico y tipografía */
+/* Estilos globales */
 body {
-  background-color: #efe6df;
   font-family: "Roboto", sans-serif;
 }
 
-/* Layout: video de fondo, overlay y contenedor principal */
+/* =========================================================
+   VIDEO DE FONDO Y OVERLAY
+========================================================= */
+
 #video1 {
   position: absolute;
   top: 0;
@@ -40,10 +48,14 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: #FF3688;
+  background: #ff3688;
   opacity: 0.43;
   z-index: -2;
 }
+
+/* =========================================================
+   CONTENEDOR PRINCIPAL
+========================================================= */
 
 .container {
   width: 100%;
@@ -55,76 +67,9 @@ body {
   justify-content: center;
 }
 
-/* Header */
-.barraSuperior {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 95%;
-  max-width: 95%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  box-sizing: border-box;
-  z-index: 5;
-  padding: 40px;
-}
-
-.carmenLogo {
-  width: 233px;
-  height: 81px;
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-.section-inicio .flechas-img {
-  display: flex;
-  gap: 10px;
-  flex-direction: column;
-  transform: translateY(300px);
-}
-
-.flecha:nth-child(2) {
-  animation: converger 4s ease-in-out infinite alternate;
-}
-.flecha:nth-child(3) {
-  animation: converger3 4s ease-in-out infinite alternate;
-}
-.flecha {
-  --moveY: 0px; /* por defecto */
-  animation: converger var(--duration, 4s) ease-in-out infinite alternate;
-}
-
-.flecha:nth-child(2) { --moveY: -22.5px; }
-.flecha:nth-child(3) { --moveY: -45px; }
-.flecha:nth-child(4) { --moveY: -67.5px; }
-
-@keyframes converger {
-  0%, 100% { transform: translateY(0); }
-  40%, 75% { transform: translateY(var(--moveY)); }
-}
-@keyframes converger3 {
-  0%, 100% { transform: translateY(0); }
-  40%, 75% { transform: translateY(var(--moveY)); }
-}
-
-.menu {
-  position: relative;
-  z-index: 10;
-  background: transparent;
-  height: 27px;
-  margin-right: 20px;
-  cursor: pointer;
-  li {
-    margin-top: 20px;
-  }
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
-}
+/* =========================================================
+   HEADER Y MENÚ SUPERIOR
+========================================================= */
 
 header {
   position: fixed;
@@ -137,25 +82,57 @@ header {
   justify-content: space-between;
   color: white;
   transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s ease;
-  z-index: 1000;
-  transform: translateY(0);
+  z-index: 5;
+  background-color: transparent;
   opacity: 1;
-  background-color: transparent; /* al principio transparente */
 }
 
-/* cuando se oculta */
-header:not(.show) {
-  transform: translateY(-100%);
-  opacity: 0;
+/* Header → barra superior */
+.barraSuperior {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 95%;
+  max-width: 95%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+  z-index: 5;
+  box-sizing: border-box;
 }
 
-/* cuando aparece tras scroll hacia arriba */
-header.scrolled {
-  background-color: rgba(0, 0, 0, 0.9); /* fondo negro */
+/* Header → logo */
+.carmenLogo {
+  width: 233px;
+  height: 81px;
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
+/* Header → menú */
+.menu {
+  position: relative;
+  z-index: 10;
+  background: transparent;
+  height: 27px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.menu li {
+  margin-top: 20px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Header → menú desplegable */
 #menu {
-  background-color: #000000;
+  background-color: #000;
   opacity: 0.9;
 }
 
@@ -163,14 +140,28 @@ header.scrolled {
   display: none;
 }
 
-/* Secciones: imagenes y columnas */
-.carmenMedio img {
+/* Header → animaciones scroll */
+header:not(.show) {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+header.scrolled {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* =========================================================
+   SECCIÓN: INICIO
+========================================================= */
+
+.section-inicio .carmenMedio img {
   width: 100%;
   height: auto;
   z-index: -1;
   max-width: 95%;
 }
 
+/* Textos principales */
 .t1,
 .t2,
 .t3 {
@@ -180,22 +171,21 @@ header.scrolled {
 .t1 {
   font-size: 22px;
   margin-top: 20px;
-  text-align: left;
   position: absolute;
   top: 38%;
   left: 15%;
-  height: 100px;
   width: 140px;
+  height: 100px;
 }
 
 .t2 {
-  text-align: left;
-  margin: 10px 0;
   position: absolute;
   top: 58%;
   left: 65%;
-  height: 54px;
   width: 387px;
+  height: 54px;
+  text-align: left;
+  margin: 10px 0;
 }
 
 .t3 {
@@ -204,9 +194,48 @@ header.scrolled {
   transform: translateY(400px);
 }
 
+/* Flechas animadas */
 .flecha {
   width: 24px;
   height: 12px;
+  --moveY: 0px;
+  animation: converger var(--duration, 4s) ease-in-out infinite alternate;
+}
+
+.section-inicio .flechas-img {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transform: translateY(300px);
+}
+
+
+/* =========================================================
+   SECCIÓN: IMÁGENES (CONOCE CARMEN)
+========================================================= */
+.section-fondo {
+  position: relative; /* contenedor para el fondo absoluto */
+  width: 100%;
+  overflow: hidden; /* opcional, evita scroll extra */
+}
+
+.fondo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  position: absolute;
+  left: 0;
+  background-color: #efe6df;
+}
+
+.section-imagenes {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 20px 10px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .section-imagenes .flechas-img {
@@ -217,22 +246,14 @@ header.scrolled {
   position: absolute;
   top: 35%;
 }
-.section-imagenes {
-  display: flex;
-  justify-content: space-between; /* distribuir columnas a lo ancho */
-  gap: 10px;
-  padding: 20px 10px;
-  width: 100%;
-  box-sizing: border-box;
-}
 
 .columna {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  flex: 1 1 0;
   gap: 200px;
   margin-top: 28px;
-  flex: 1 1 0; /* permitir que cada columna crezca para ocupar el espacio */
-  align-items: center;
 }
 
 .columna .foto {
@@ -240,9 +261,10 @@ header.scrolled {
   height: 205px;
   object-fit: cover;
   border-radius: 200px;
+  position: relative;
 }
 
-/* Excluir las imágenes .corazon de la regla anterior */
+/* Ajustes específicos por imagen */
 #corazon {
   object-fit: scale-down;
   border-radius: 0;
@@ -257,9 +279,7 @@ header.scrolled {
 #img4 {
   transform: translateX(40px);
 }
-#img5 {
-  transform: translateY(60px);
-}
+#img5,
 #img6 {
   transform: translateY(60px);
 }
@@ -274,19 +294,12 @@ header.scrolled {
 #columnaCinco {
   padding-top: 150px;
 }
-/* Posicionar las corazon encima del texto en la columna central */
+
 #columnaCentral {
   padding-top: 350px;
   align-items: center;
   justify-content: center;
-  position: relative; /* contenedor para posicionar las corazon */
-}
-
-
-
-#columnaCentral {
-  align-items: center;
-  justify-content: center;
+  position: relative;
 }
 
 #columnaCentral p {
@@ -301,9 +314,119 @@ header.scrolled {
   top: 15%;
 }
 
-/* Banner */
+/* =========================================================
+   SECCIÓN: CARDS (VIDEOS)
+========================================================= */
+
+.cards {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  margin: 80px auto 0 auto;
+}
+
+/* Card base */
+.card {
+  position: relative;
+  max-width: 530px;
+  min-width: 200px;
+  border-radius: 30px;
+  overflow: hidden;
+  filter: drop-shadow(0px 24px 64px rgba(0, 0, 0, 0.25));
+}
+
+/* Card → video */
+.card video {
+  width: 100%;
+  height: 800px;
+  border-radius: 30px;
+  object-fit: cover;
+}
+
+/* Card → overlay */
+.overlay-cards {
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.4;
+}
+
+/* Colores personalizados por card */
+#card1 .overlay-cards {
+  background-color: #2c160a;
+}
+#card2 .overlay-cards {
+  background-color: #de0047;
+}
+#card3 .overlay-cards {
+  background-color: #ff3688;
+}
+
+/* Card → contenido */
+.card-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: justify;
+  color: white;
+}
+
+.card-content img {
+  margin-top: 300px;
+}
+.card-content h2 {
+  font-size: 62px;
+  font-weight: normal;
+  margin: 59px 0 43px 0;
+}
+.card-content p {
+  width: 55%;
+  font-size: 21px;
+  margin-bottom: 72px;
+}
+
+.cards .text-corazon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 50px;
+  gap: 20px;
+}
+
+.cards .text-fall {
+    font-size: 5vw;
+    max-width: 60%;
+    color: #ff3688;
+    position: relative;
+    z-index: 1;
+    margin-top: 50px;
+}
+
+.cards .corazon {
+  margin-top: 100px;
+  width: 50px;
+  height: 50px;
+  position: relative;
+  z-index: 1;
+}
+
+/* =========================================================
+   SECCIÓN: BANNER CARMEN
+========================================================= */
+
 .banner-carmen {
-  background: linear-gradient(to bottom, #ffffff 0%, #efe6df 50%, #ff3688 100%);
+  background: linear-gradient(to bottom, #efe6df 25%, #ff3688 100%);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -313,16 +436,9 @@ header.scrolled {
 .banner-inner {
   display: flex;
   flex-direction: column;
-  text-align: center;
   align-items: center;
+  text-align: center;
   width: 100%;
-}
-
-.banner-title {
-  font-size: 92px;
-  max-width: 60%;
-  color: #ff3688;
-  margin-bottom: 200px;
 }
 
 .banner-image {
@@ -331,11 +447,15 @@ header.scrolled {
   align-items: center;
   justify-content: center;
   width: 100%;
-  max-width: 100%;
-  height: auto;
 }
+
 #carmen {
   width: 100%;
+}
+#corazones {
+  max-height: 300px;
+  padding: 50px 0;
+  width: auto;
 }
 
 .banner-sub {
@@ -344,120 +464,37 @@ header.scrolled {
   color: #fff;
 }
 
-#corazones {
-  max-height: 300px;
-  width: auto;
-  padding-top: 50px;
-  padding-bottom: 50px;
-}
-
-/* Cards: vídeos y layout de tarjetas */
-.card {
-  border-radius: 30px;
-  overflow: hidden;
-  position: relative;
-}
-.card video {
-  height: 892px;
-  width: 529px;
-  object-fit: cover;
-  border-radius: 30px;
-}
-
-.cards {
-  background: linear-gradient(to bottom, #efe6df 0%, #fff 100%);
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  gap: 20px;
-  padding: 20px;
-  margin: 0 auto;
-  margin-top: 80px;
-  flex-wrap: wrap;
-}
-
-/* Offsets para cards individuales */
-#card3 {
-  transform: translateY(70px);
-}
-
-#card2 {
-  transform: translateY(200px);
-}
-
-/* Overlay genérico */
-.overlay-cards {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 892px;
-  border-radius: 30px;
-  mix-blend-mode: multiply;
-  opacity: 0.6;
-}
-.card-content {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: justify;
-  justify-content: center;
-  color: white;
-  img {
-    margin-top: 300px;
-  }
-  h2 {
-    font-size: 62px;
-    font-weight: normal;
-    margin: 59px 0 43px 0;
-  }
-  p {
-    width: 55%;
-    font-size: 22px;
-    margin-bottom: 72px;
-  }
-}
-
-/* Colores de máscara personalizados */
-#card1 .overlay-cards {
-  background-color: #2c160a;
-}
-
-#card2 .overlay-cards {
-  background-color: #de0047;
-}
-
-#card3 .overlay-cards {
-  background-color: #ff3688;
-}
+/* =========================================================
+   SECCIÓN: TRINIDAD HERRERO
+========================================================= */
 
 .trinidad {
-  padding-top: 100px;
+  margin-top: -2px; /* Eliminar espacio entre secciones */
   background-color: #ff3688;
+  padding: 100px 0;
   width: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.trinidad .trinidad-imagenes {
+  position: relative;
+  width: 100%;
+  display: flex;
   justify-content: center;
   align-items: center;
-  box-sizing: border-box;
-  padding-bottom: 100px;
-  .trinidad-imagenes {
-    position: relative; /* contenedor para posicionar svg y la imagen */
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
 }
+
 .trinidad .wrapper-image {
   width: 50%;
-  margin: 0px 15%;
-  img {
-    width: 100%;
-    height: auto;
-  }
+  margin: 0 15%;
+}
+
+.trinidad .wrapper-image img {
+  width: 100%;
+  height: auto;
 }
 
 .trinidad .svg-trinidad {
@@ -467,55 +504,75 @@ header.scrolled {
 .texto-trinidad {
   background-color: #ff3688;
   color: #fff;
-  width: 100%;
   text-align: justify;
   font-size: 23px;
+  width: 100%;
   display: flex;
   justify-content: center;
-  p {
-    padding-top: 60px;
-    max-width: 532px;
-  }
-  h3 {
-    padding-top: 80px;
-    text-align: center;
-    max-width: 694px;
-  }
 }
+
+.texto-trinidad p {
+  padding-top: 60px;
+  max-width: 532px;
+}
+
+.texto-trinidad h3 {
+  padding-top: 80px;
+  text-align: center;
+  max-width: 694px;
+}
+
 .nombre {
-  font-size: 72px;
+  font-size: 67px;
 }
+
+/* =========================================================
+   SECCIÓN: SPONSORS
+========================================================= */
+
 .sponsors-section {
+  margin-top: -2px; /* Eliminar espacio entre secciones */
+  background-color: #ff3688;
   text-align: center;
   width: 100%;
-  background-color: #ff3688;
-  p {
-    color: #fff;
-    font-size: 32px;
-    padding-top: 20px;
-    margin: 0 0 20px 0;
-  }
+}
+
+.sponsors-section p {
+  color: #fff;
+  font-size: 32px;
+  padding-top: 20px;
+  margin-bottom: 20px;
 }
 
 .sponsors-section .sponsors {
   max-width: 80%;
-  height: auto;
   display: block;
-  margin: 0 auto; /* centrar horizontalmente */
+  margin: 0 auto;
 }
+
+/* =========================================================
+   SECCIÓN: SLIDER (DATOS)
+========================================================= */
 
 .slider-textos {
   width: 100%;
   margin: 0 auto;
   background: #efe6df;
-  .slider-title {
-    color: #ff3688;
-    font-size: 13vw;
-    width: 100%;
-    margin: 0 0 20px 0;
-    text-align: left;
-  }
 }
+
+.slider-track {
+  background-color: #efe6df;
+}
+.slider-textos .slider-title {
+  color: #ff3688;
+  font-weight: bold;
+  font-size: 7vw;
+  width: 50%;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+/* Slider → slides */
 .slick-track .slide {
   display: flex;
   flex-direction: row;
@@ -523,7 +580,6 @@ header.scrolled {
 }
 
 .slick-track .slick-slide {
-  box-sizing: border-box;
   background-color: #efe6df;
   border: 2px solid #ff3688;
   color: #ff3688;
@@ -535,39 +591,64 @@ header.scrolled {
   display: flex !important;
   align-items: center;
   justify-content: center;
-  transition: box-shadow 0.3s, opacity 0.3s;
+  box-sizing: border-box;
   opacity: 0.4;
-}
-.slick-track .slick-center {
-  opacity: 1;
-  box-shadow: 0 4px 24px rgba(255, 54, 136, 0.13); /* resalta el slide central */
-}
-.slider-track::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 500px; /* ancho del degradado */
-  height: 100%;
-  pointer-events: none; /* que no bloquee clics */
-  background: linear-gradient(to right, #efe6df 0%, transparent 100%);
-  z-index: 2;
+  transform: scale(0.7);
+  transition: box-shadow 0.3s, opacity 0.3s;
 }
 
+.slick-track .slick-center {
+  opacity: 1;
+  transform: scale(1);
+  box-shadow: 0 4px 24px rgba(255, 54, 136, 0.13);
+}
+
+/* Slider → bordes difuminados */
+.slider-track::before,
 .slider-track::after {
   content: "";
   position: absolute;
   top: 0;
-  right: 0;
   width: 500px;
   height: 100%;
   pointer-events: none;
-  background: linear-gradient(to left, #efe6df 0%, transparent 100%);
   z-index: 2;
 }
-.slick-dots {
-  bottom: 8px;
+
+.slider-track::before {
+  left: 0;
+  color: transparent;
+  background: linear-gradient(to right, #efe6df 0%, transparent 100%);
 }
+
+.slider-track::after {
+  right: 0;
+  color: transparent;
+  background: linear-gradient(to left, #efe6df 0%, transparent 100%);
+}
+.slider-track .slick-dots {
+  background-color: #efe6df;
+}
+.slider-track .slick-dots li button {
+  border: 2px solid #ff3688;
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  color: transparent;
+  user-select: none;
+  background-color: #efe6df;
+}
+
+.slick-dots li.slick-active button {
+  background: #ff3688;
+  opacity: 1;
+}
+
+.slider-track .slick-dots li button:before,
+.slider-track .slick-dots li.slick-active button:before {
+  opacity: 0;
+}
+
 .highlight1,
 .highlight2,
 .highlight3 {
@@ -575,22 +656,27 @@ header.scrolled {
   font-size: 58px;
 }
 
+/* =========================================================
+   SECCIÓN: EVIDENCIA CIENTÍFICA
+========================================================= */
+
 .section-evidence {
+  margin-top: -6px; /* Eliminar espacio entre secciones */
   background-color: #efe6df;
-  margin: 0;
-  padding-bottom: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-bottom: 100px;
 }
+
 .section-evidence .wrapper-image {
   width: 26%;
-  img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
+}
+
+.section-evidence .wrapper-image img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .section-evidence .evidence-container {
@@ -599,16 +685,17 @@ header.scrolled {
   align-items: center;
   justify-content: flex-end;
   gap: 100px;
-  margin: 0 auto;
-  box-sizing: border-box;
-  flex-wrap: nowrap;
-  text-align: right;
   width: 100%;
-  p {
-    color: #ff3688;
-    font-size: 9vw;
-    width: 60%;
-  }
+  text-align: right;
+  flex-wrap: nowrap;
+  box-sizing: border-box;
+}
+
+.section-evidence .evidence-container p {
+  color: #ff3688;
+  font-size: 6vw;
+  width: 55%;
+  font-weight: bold;
 }
 
 .evidence-cards {
@@ -617,28 +704,28 @@ header.scrolled {
   max-width: 60%;
   gap: 60px;
 }
+
 .evidence-card {
   position: relative;
+  flex: 1;
   width: 20%;
   border-radius: 12px;
   text-align: center;
-  flex: 1;
-  object-fit: contain;
 }
+
 .imagen-stat {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  position: relative; /* para posicionar .linea si es absoluta */
+  position: relative;
   padding: 12px 0;
 }
 
 .imagen-stat img {
-  display: block;
   max-width: 100%;
   height: auto;
   margin: 0 auto;
+  display: block;
 }
 
 .stat3 {
@@ -647,12 +734,13 @@ header.scrolled {
 
 .linea {
   position: absolute;
+  width: 7%;
   top: 50%;
   left: 50%;
   transform: translateX(-50%);
 }
 
-/* Asegurar separación entre la zona de imágenes y los textos */
+/* Texto bajo iconos */
 .evidence-card h3 {
   color: #ff3688;
   margin-top: 140px;
@@ -661,56 +749,47 @@ header.scrolled {
 }
 
 .evidence-card p {
-  margin-top: 0;
   color: #ff3688;
   font-size: 24px;
 }
 
+/* =========================================================
+   SECCIÓN: FORMULARIO FINAL
+========================================================= */
+
 .final-form {
+  position: relative;
   text-align: center;
-  margin: 0;
   padding-top: 24px;
-  position: relative; /* contenedor para el video */
   overflow: hidden;
-  input {
-    margin: 50px 65px;
-    width: 35%;
-    background-color: transparent;
-    border: none;
-    border-bottom: 1px solid #fff;
-    font-size: 32px;
-  }
-  img {
-    width: 100%;
-    position: relative;
-    z-index: 1;
-  }
 }
-label {
-  color: #fff;
-}
+
 .final-form h2 {
   color: #fff;
-  margin: 0 0 12px 0;
   font-size: 62px;
-  padding: 0;
+  margin-bottom: 12px;
   position: relative;
   z-index: 1;
 }
+
+.final-form img {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+/* Video de fondo */
 .final-form #video2 {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   opacity: 1;
-  z-index: -1; /* asegurar que queda detrás */
+  z-index: -1;
 }
 
-/* Overlay negro semitransparente */
+/* Overlay oscuro */
 .final-form::after {
   content: "";
   position: absolute;
@@ -719,35 +798,41 @@ label {
   z-index: 0;
 }
 
-/* Ajustar el formulario para que quede encima del overlay */
+/* Formulario */
 .final-form .formulario {
   position: relative;
-  z-index: 1; /* por encima del overlay */
+  z-index: 1;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
 }
+
 .final-form .input-group {
   width: 100%;
 }
+
+.final-form input {
+  margin: 50px 65px;
+  width: 35%;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #fff;
+  font-size: 32px;
+}
+
 input::placeholder {
   font-family: "Roboto", sans-serif;
 }
-.subrayado {
-  text-decoration: underline;
-}
-.final-form .condiciones {
-  font-size: 19px;
-  margin-right: 120px;
-}
+
+/* Checkbox */
 .final-form .checkbox-container {
   display: flex;
   align-items: baseline;
+  justify-content: flex-start;
   width: 50%;
-  justify-content: center;
-  margin-right: 20px;
 }
+
 .final-form .checkbox {
   appearance: none;
   width: 20px;
@@ -756,13 +841,22 @@ input::placeholder {
   background: transparent;
   border-radius: 4px;
   cursor: pointer;
-  margin: 0;
   margin-right: 20px;
 }
+
 .final-form input[type="checkbox"]:checked {
   background-color: #ff3688;
   border-color: #ff3688;
 }
+
+/* Texto del checkbox */
+.final-form .checkbox-label {
+  color: #fff;
+  font-size: 20px;
+  text-align: left;
+}
+
+/* Botón de enviar */
 .final-form .btn-enviar {
   color: #fff;
   border: 2px solid #ff3688;
@@ -778,6 +872,139 @@ input::placeholder {
   }
 }
 
-* {
-  text-transform: uppercase;
+.final-form .subrayado {
+  text-decoration: underline;
+}
+
+.final-form .condiciones {
+  font-size: 19px;
+  margin-right: 120px;
+  color: #fff;
+}
+
+/* =========================================================
+     MEDIA QUERIES (RESPONSIVE)
+  ========================================================= */
+
+@media (max-width: 1024px) {
+  .banner-title {
+    font-size: 10vw;
+    max-width: 80%;
+  }
+
+  .banner-sub {
+    font-size: 4vw;
+    max-width: 60%;
+  }
+
+  .card-content h2 {
+    font-size: 8vw;
+  }
+
+  .card-content p {
+    width: 80%;
+    font-size: 3vw;
+  }
+
+  .evidence-card h3 {
+    font-size: 5vw;
+    margin-top: 80px;
+  }
+
+  .evidence-card p {
+    font-size: 3vw;
+  }
+
+  .final-form input {
+    width: 60%;
+    font-size: 24px;
+  }
+
+  .final-form .checkbox-container {
+    width: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    height: 100px;
+    padding: 10px 20px;
+  }
+
+  .carmenLogo {
+    width: 160px;
+  }
+
+  .menu {
+    margin-right: 10px;
+  }
+
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    max-width: 90%;
+  }
+
+  .banner-title {
+    font-size: 12vw;
+    margin-bottom: 120px;
+  }
+
+  .banner-sub {
+    font-size: 5vw;
+  }
+
+  .slider-textos .slider-title {
+    font-size: 10vw;
+    width: 90%;
+  }
+
+  .evidence-cards {
+    flex-direction: column;
+    max-width: 90%;
+    gap: 30px;
+  }
+
+  .final-form h2 {
+    font-size: 8vw;
+  }
+
+  .final-form input {
+    width: 80%;
+    margin: 30px auto;
+  }
+
+  .final-form button {
+    width: 60%;
+    padding: 16px 0;
+  }
+
+  .checkbox-label {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner-title {
+    font-size: 14vw;
+  }
+
+  .banner-sub {
+    font-size: 6vw;
+  }
+
+  .card-content h2 {
+    font-size: 10vw;
+  }
+
+  .card-content p {
+    font-size: 4vw;
+  }
+
+  .final-form button {
+    font-size: 20px;
+  }
 }

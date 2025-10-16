@@ -7,7 +7,7 @@ $(function () {
     variableWidth: true,
     centerMode: true,
     infinite: true,
-    //autoplay: true,
+    autoplay: true,
     autoplaySpeed: 3000,
     arrows: false,
     dots: true,
@@ -73,5 +73,39 @@ $(function () {
     lastScrollTop = currentScroll;
   });
 });
+
+
+gsap.to(".flecha:nth-child(1)", {
+  y: 0,
+  repeat: -1,
+  yoyo: true,
+  duration: 4,
+  ease: "power1.inOut"
+});
+
+gsap.to(".flecha:nth-child(2)", {
+  y: -22.5,
+  repeat: -1,
+  yoyo: true,
+  duration: 4,
+  ease: "power1.inOut"
+});
+
+gsap.to(".flecha:nth-child(3)", {
+  y: -45,
+  repeat: -1,
+  yoyo: true,
+  duration: 4,
+  ease: "power1.inOut"
+});
+
+gsap.to(".flecha:nth-child(4)", {
+  y: -67.5,
+  repeat: -1,
+  yoyo: true,
+  duration: 4,
+  ease: "power1.inOut"
+});
+
 
 });
