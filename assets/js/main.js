@@ -21,91 +21,113 @@ $(function () {
     ],
   });
 
-  // Código del menú cerrado/inicial
-  const $toggleMenuBtn = $("#toggleMenu");
-  const $menu = $("#menu");
-
-  $toggleMenuBtn.on("click", function () {
-    $menu.toggleClass("cerrado");
+  gsap.to(".flecha:nth-child(1)", {
+    y: 0,
+    repeat: -1,
+    yoyo: true,
+    duration: 4,
+    ease: "power1.inOut",
   });
 
-  gsap.registerPlugin(ScrollToPlugin);
-
-  $("nav a").on("click", function (e) {
-    e.preventDefault(); // evitar comportamiento por defecto
-    const target = $(this).attr("href");
-
-    // animación de scroll suave
-    gsap.to(window, {
-      duration: 1.5, // duración en segundos
-      scrollTo: { y: target, offsetY: 80 }, // 80px de margen superior (por el header fijo)
-      ease: "power2.inOut",
-    });
-
-    // cerrar menú en móvil
-    $menu.addClass("cerrado");
+  gsap.to(".flecha:nth-child(2)", {
+    y: -22.5,
+    repeat: -1,
+    yoyo: true,
+    duration: 4,
+    ease: "power1.inOut",
   });
+
+  gsap.to(".flecha:nth-child(3)", {
+    y: -45,
+    repeat: -1,
+    yoyo: true,
+    duration: 4,
+    ease: "power1.inOut",
+  });
+
+  gsap.to(".flecha:nth-child(4)", {
+    y: -67.5,
+    repeat: -1,
+    yoyo: true,
+    duration: 4,
+    ease: "power1.inOut",
+  });
+
+
+    const $menuLateral = $("#menuLateral");
+    const $toggleMenuBtn = $("#toggleMenu");
 
   $(function () {
-  let lastScrollTop = 0;
-  const $header = $("header");
-  const $menu = $("#menu");
-  const triggerHeight = 300;
-  $header.addClass("show");
+    let lastScrollTop = 0;
+    const $header = $("header");
+    const triggerHeight = 300;
 
-  $(window).on("scroll", function () {
-    const currentScroll = $(this).scrollTop();
+    $header.addClass("show"); // visible al inicio sin fondo
 
-    if (currentScroll <= triggerHeight) {
-      // Visible y transparente al principio
-      $header.addClass("show").removeClass("scrolled");
-    } 
-    else if (currentScroll > lastScrollTop) {
-      // Scroll hacia abajo → ocultar
-      $header.removeClass("show");
-      $menu.addClass("cerrado");
-    } 
-    else {
-      // Scroll hacia arriba → mostrar con fondo negro
-      $header.addClass("show scrolled");
-    }
+    $(window).on("scroll", function () {
+      const currentScroll = $(this).scrollTop();
 
-    lastScrollTop = currentScroll;
+      if (currentScroll <= triggerHeight) {
+        // Al principio: barra visible, fondo transparente
+        $header.addClass("show").removeClass("scrolled");
+      } else if (currentScroll > lastScrollTop) {
+        // Scroll hacia abajo: ocultar barra y cerrar menú
+        $header.removeClass("show");
+        if ($menuLateral.hasClass("abierto")) {
+          gsap.to($menuLateral, { right: "-300px", duration: 0.5 });
+          $menuLateral.removeClass("abierto");
+        }
+      } else {
+        // Scroll hacia arriba: mostrar barra con fondo negro
+        $header.addClass("show scrolled");
+      }
+
+      lastScrollTop = currentScroll;
+    });
+
+    // Menú toggle con animación GSAP
+    $toggleMenuBtn.on("click", function () {
+      if ($menuLateral.hasClass("abierto")) {
+        gsap.to($menuLateral, {
+          right: "-300px",
+          duration: 0.5,
+          ease: "power2.inOut",
+          onComplete: () => $menuLateral.removeClass("abierto"),
+        });
+      } else {
+        $menuLateral.addClass("abierto");
+        gsap.to($menuLateral, {
+          right: "0px",
+          duration: 0.5,
+          ease: "power2.inOut",
+        });
+      }
+    });
   });
-});
 
+  // Cerrar menú al hacer clic fuera
+  $(document).on("click", function (event) {
+    if (
+      $menuLateral.hasClass("abierto") &&
+      !$menuLateral.is(event.target) &&
+      $menuLateral.has(event.target).length === 0 &&
+      !$toggleMenuBtn.is(event.target)
+    ) {
+      gsap.to($menuLateral, {
+        right: "-300px",
+        duration: 0.5,
+        ease: "power2.inOut",
+        onComplete: () => $menuLateral.removeClass("abierto"),
+      });
+    }
+  });
 
-gsap.to(".flecha:nth-child(1)", {
-  y: 0,
-  repeat: -1,
-  yoyo: true,
-  duration: 4,
-  ease: "power1.inOut"
-});
-
-gsap.to(".flecha:nth-child(2)", {
-  y: -22.5,
-  repeat: -1,
-  yoyo: true,
-  duration: 4,
-  ease: "power1.inOut"
-});
-
-gsap.to(".flecha:nth-child(3)", {
-  y: -45,
-  repeat: -1,
-  yoyo: true,
-  duration: 4,
-  ease: "power1.inOut"
-});
-
-gsap.to(".flecha:nth-child(4)", {
-  y: -67.5,
-  repeat: -1,
-  yoyo: true,
-  duration: 4,
-  ease: "power1.inOut"
-});
-
-
+  $("#btnCerrarMenu").on("click", function () {
+    gsap.to("#menuLateral", {
+      right: "-300px",
+      duration: 0.5,
+      ease: "power2.inOut",
+      onComplete: () => $("#menuLateral").removeClass("abierto"),
+    });
+  });
 });

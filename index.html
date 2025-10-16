@@ -35,21 +35,24 @@
           src="/assets/img/carmenLogo.png"
           alt="Logo Carmen"
         />
-        <nav class="menu">
-          <img
-            id="toggleMenu"
-            src="/assets/img/menu.png"
-            alt="Abrir menú"
-            style="cursor: pointer"
-          />
-          <ul id="menu" class="cerrado">
-            <li><a href="#imagenes">Conoce a Carmen</a></li>
-            <li><a href="#objetivos">Objetivos</a></li>
-            <li><a href="#integrantes">Quien forma Carmen</a></li>
-            <li><a href="#contexto">Contexto social</a></li>
-          </ul>
-        </nav>
+        <img
+          id="toggleMenu"
+          src="/assets/img/menu.png"
+          alt="Abrir menú"
+          class="menuBtn"
+        />
       </div>
+
+      <!-- Nueva barra lateral -->
+      <nav id="menuLateral" class="cerrado">
+        <button id="btnCerrarMenu" aria-label="Cerrar menú">×</button>
+        <ul>
+          <li><a href="#imagenes">Conoce a Carmen</a></li>
+          <li><a href="#objetivos">Objetivos</a></li>
+          <li><a href="#integrantes">Quien forma Carmen</a></li>
+          <li><a href="#contexto">Contexto social</a></li>
+        </ul>
+      </nav>
     </header>
 
     <!-- Primera sección -->
@@ -79,105 +82,107 @@
         <img src="/assets/img/fondo.png" alt="Fondo" class="fondo" />
       </div>
       <section class="section-imagenes" id="imagenes">
-      <div class="columna">
-        <img src="/assets/img/p1.jpg" class="foto" id="img1" />
-        <img src="/assets/img/p2.jpg" class="foto" id="img2" />
-        <img src="/assets/img/p3.jpg" class="foto" id="img3" />
-      </div>
-      <div class="columna" id="columnaDos">
-        <img src="/assets/img/p4.jpg" class="foto" id="img4" />
-        <img src="/assets/img/p5.jpg" class="foto" id="img5" />
-      </div>
-      <div class="columna" id="columnaCentral">
-        <img
-          src="/assets/img/logo-corazon.png"
-          class="corazon-img"
-          id="corazon"
-        />
-        <p>
-          CARMEN ES UNA ALIANZA DE DISTINTAS EMPRESAS E INSTITUCIONES
-          COMPROMETIDAS EN VISIBILIZAR Y CAMBIAR LOS SESGOS DE GÉNERO QUE
-          AFECTAN A LA CALIDAD DE VIDA Y A LA SALUD DE LAS MUJERES. <br /><br />
-          Y, CARMEN SERÁ LA VOZ Y LA CARA DE LA SALUD DE LAS MUJERES.
-        </p>
-        <div class="flechas-img">
-          <img src="/assets/img/flecha-rosa.png" class="flecha" />
-          <img src="/assets/img/flecha-rosa.png" class="flecha" />
-          <img src="/assets/img/flecha-rosa.png" class="flecha" />
-          <img src="/assets/img/flecha-rosa.png" class="flecha" />
+        <div class="columna">
+          <img src="/assets/img/p1.jpg" class="foto" id="img1" />
+          <img src="/assets/img/p2.jpg" class="foto" id="img2" />
+          <img src="/assets/img/p3.jpg" class="foto" id="img3" />
         </div>
-        <img src="/assets/img/p6.jpg" class="foto" id="img6" />
-      </div>
-      <div class="columna" id="columnaCuatro">
-        <img src="/assets/img/p7.jpg" class="foto" id="img7" />
-        <img src="/assets/img/p8.jpg" class="foto" id="img8" />
-        <img src="/assets/img/p9.jpg" class="foto" id="img9" />
-      </div>
-      <div class="columna" id="columnaCinco">
-        <img src="/assets/img/p10.jpg" class="foto" id="img10" />
-        <img src="/assets/img/p11.jpg" class="foto" id="img11" />
-      </div>
-    </section>
+        <div class="columna" id="columnaDos">
+          <img src="/assets/img/p4.jpg" class="foto" id="img4" />
+          <img src="/assets/img/p5.jpg" class="foto" id="img5" />
+        </div>
+        <div class="columna" id="columnaCentral">
+          <img
+            src="/assets/img/logo-corazon.png"
+            class="corazon-img"
+            id="corazon"
+          />
+          <p>
+            CARMEN ES UNA ALIANZA DE DISTINTAS EMPRESAS E INSTITUCIONES
+            COMPROMETIDAS EN VISIBILIZAR Y CAMBIAR LOS SESGOS DE GÉNERO QUE
+            AFECTAN A LA CALIDAD DE VIDA Y A LA SALUD DE LAS MUJERES.
+            <br /><br />
+            Y, CARMEN SERÁ LA VOZ Y LA CARA DE LA SALUD DE LAS MUJERES.
+          </p>
+          <div class="flechas-img">
+            <img src="/assets/img/flecha-rosa.png" class="flecha" />
+            <img src="/assets/img/flecha-rosa.png" class="flecha" />
+            <img src="/assets/img/flecha-rosa.png" class="flecha" />
+            <img src="/assets/img/flecha-rosa.png" class="flecha" />
+          </div>
+          <img src="/assets/img/p6.jpg" class="foto" id="img6" />
+        </div>
+        <div class="columna" id="columnaCuatro">
+          <img src="/assets/img/p7.jpg" class="foto" id="img7" />
+          <img src="/assets/img/p8.jpg" class="foto" id="img8" />
+          <img src="/assets/img/p9.jpg" class="foto" id="img9" />
+        </div>
+        <div class="columna" id="columnaCinco">
+          <img src="/assets/img/p10.jpg" class="foto" id="img10" />
+          <img src="/assets/img/p11.jpg" class="foto" id="img11" />
+        </div>
+      </section>
 
-    <!--Cards con videos -->
-    <section class="cards" id="objetivos">
-      <div class="card" id="card1">
-        <video autoplay muted loop playinline>
-          <source src="/assets/video/card1.mp4" type="video/mp4" />
-          Tu navegador no soporta el video.
-        </video>
-        <div class="overlay-cards"></div>
-        <div class="card-content">
-          <img src="assets/img/card-logo1.png" />
-          <h2>PENSAR</h2>
-          <p>
-            Impulsar nuevas evidencias científicas que ayuden a tratar la salud
-            de la mujer en todas sus dimensiones. Para ello hemos creado un
-            Comité Académico que trabaje en la generación de conocimiento.
-          </p>
+      <!--Cards con videos -->
+      <section class="cards" id="objetivos">
+        <div class="card" id="card1">
+          <video autoplay muted loop playinline>
+            <source src="/assets/video/card1.mp4" type="video/mp4" />
+            Tu navegador no soporta el video.
+          </video>
+          <div class="overlay-cards"></div>
+          <div class="card-content">
+            <img src="assets/img/card-logo1.png" />
+            <h2>PENSAR</h2>
+            <p>
+              Impulsar nuevas evidencias científicas que ayuden a tratar la
+              salud de la mujer en todas sus dimensiones. Para ello hemos creado
+              un Comité Académico que trabaje en la generación de conocimiento.
+            </p>
+          </div>
         </div>
-      </div>
-      <div class="card" id="card2">
-        <video autoplay muted loop playinline>
-          <source src="/assets/video/card2.mp4" type="video/mp4" />
-          Tu navegador no soporta el video.
-        </video>
-        <div class="overlay-cards"></div>
-        <div class="card-content">
-          <img src="assets/img/card-logo2.png" />
-          <h2>HABLAR</h2>
-          <p>
-            Sensibilizar sobre las consecuencias de las brechas de género en la
-            salud mediante el desarrollo de campañas divulgativas temáticas.
-          </p>
+        <div class="card" id="card2">
+          <video autoplay muted loop playinline>
+            <source src="/assets/video/card2.mp4" type="video/mp4" />
+            Tu navegador no soporta el video.
+          </video>
+          <div class="overlay-cards"></div>
+          <div class="card-content">
+            <img src="assets/img/card-logo2.png" />
+            <h2>HABLAR</h2>
+            <p>
+              Sensibilizar sobre las consecuencias de las brechas de género en
+              la salud mediante el desarrollo de campañas divulgativas
+              temáticas.
+            </p>
+          </div>
         </div>
-      </div>
-      <div class="card" id="card3">
-        <video autoplay muted loop playinline>
-          <source src="/assets/video/card3.mp4" type="video/mp4" />
-          Tu navegador no soporta el video.
-        </video>
-        <div class="overlay-cards"></div>
-        <div class="card-content">
-          <img src="assets/img/card-logo3.png" />
-          <h2>IMPACTAR</h2>
-          <p>
-            Conseguir cambios en diferentes ámbitos, como en cuestiones
-            regulatorias o en el ámbito universitario para entre todos mejorar
-            la salud de la mujer.
-          </p>
+        <div class="card" id="card3">
+          <video autoplay muted loop playinline>
+            <source src="/assets/video/card3.mp4" type="video/mp4" />
+            Tu navegador no soporta el video.
+          </video>
+          <div class="overlay-cards"></div>
+          <div class="card-content">
+            <img src="assets/img/card-logo3.png" />
+            <h2>IMPACTAR</h2>
+            <p>
+              Conseguir cambios en diferentes ámbitos, como en cuestiones
+              regulatorias o en el ámbito universitario para entre todos mejorar
+              la salud de la mujer.
+            </p>
+          </div>
         </div>
-      </div>
-      <div class="text-corazon">
-        <img src="assets/img/corazon.png" class="corazon" />
-        <h2 class="text-fall">
-        QUEREMOS IMPULSAR LA PERSPECTIVA DE GÉNERO EN EL TERRENO DE LA SALUD.
-      </h2>
+        <div class="text-corazon">
+          <img src="assets/img/corazon.png" class="corazon" />
+          <h2 class="text-fall">
+            QUEREMOS IMPULSAR LA PERSPECTIVA DE GÉNERO EN EL TERRENO DE LA
+            SALUD.
+          </h2>
+        </div>
+      </section>
     </div>
-      
-    </section>
-</div>
-    
+
     <!-- CARMEN  -->
     <section class="banner-carmen">
       <div class="banner-inner">
