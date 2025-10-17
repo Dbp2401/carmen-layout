@@ -130,13 +130,6 @@ $(function () {
     });
   });
 
-  gsap.registerPlugin(ScrollTrigger);
-
-  const desplazamientosY = [
-    -50, // card izquierda va hacia arriba 50px
-    150, // card del medio va hacia abajo 150px
-    70, // card derecha va hacia abajo 70px
-  ];
 
   gsap.registerPlugin(ScrollTrigger);
 
